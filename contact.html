@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Contact — Asad Lodhi</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="css/main.css"/>
+<style>
+.contact-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; margin-top: 64px; }
+@media (max-width: 800px) { .contact-layout { grid-template-columns: 1fr; gap: 48px; } }
+.contact-info { display: flex; flex-direction: column; gap: 20px; }
+.contact-card {
+  background: var(--white); border: 1px solid var(--border); border-radius: var(--radius);
+  padding: 24px 28px; display: flex; align-items: center; gap: 20px;
+  transition: all 0.2s;
+}
+.contact-card:hover { border-color: var(--accent); transform: translateX(4px); box-shadow: 0 4px 20px rgba(14,17,23,0.07); }
+.contact-icon {
+  width: 44px; height: 44px; border-radius: 10px; background: var(--accent-lt);
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+}
+.contact-icon svg { width: 20px; height: 20px; color: var(--accent); }
+.contact-label { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-mute); margin-bottom: 3px; }
+.contact-value { font-size: 0.95rem; font-weight: 600; color: var(--ink); }
+.availability-box {
+  background: var(--accent-lt); border: 1px solid rgba(26,86,176,0.15);
+  border-radius: var(--radius); padding: 20px 24px; margin-top: 8px;
+}
+.avail-dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: var(--green); margin-right: 8px; animation: pulse 2s infinite; }
+@keyframes pulse { 0%,100%{opacity:1;}50%{opacity:0.4;} }
+.availability-box p { font-size: 0.88rem; color: var(--ink-soft); line-height: 1.6; }
+.form-box {
+  background: var(--white); border: 1px solid var(--border); border-radius: var(--radius-lg);
+  padding: 40px 36px;
+}
+.form-box h3 { font-family: var(--font-display); font-size: 1.4rem; font-weight: 700; color: var(--ink); margin-bottom: 6px; }
+.form-box .form-sub { font-size: 0.88rem; color: var(--ink-mute); margin-bottom: 28px; }
+.form-group { margin-bottom: 18px; }
+.form-group label { display: block; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.04em; color: var(--ink-soft); margin-bottom: 6px; text-transform: uppercase; }
+.form-group input, .form-group textarea, .form-group select {
+  width: 100%; padding: 12px 16px; border: 1px solid var(--border);
+  border-radius: 8px; font-family: var(--font-body); font-size: 0.9rem; color: var(--ink);
+  background: var(--cream); outline: none; transition: border-color 0.2s, box-shadow 0.2s;
+}
+.form-group input:focus, .form-group textarea:focus, .form-group select:focus {
+  border-color: var(--accent); box-shadow: 0 0 0 3px rgba(26,86,176,0.08);
+}
+.form-group textarea { min-height: 130px; resize: vertical; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+@media (max-width: 500px) { .form-row { grid-template-columns: 1fr; } }
+.form-submit {
+  width: 100%; padding: 14px; border: none; border-radius: 10px;
+  background: var(--ink); color: var(--white); font-family: var(--font-body);
+  font-size: 0.95rem; font-weight: 700; cursor: pointer; transition: all 0.2s;
+  margin-top: 8px;
+}
+.form-submit:hover { background: var(--accent); transform: translateY(-1px); box-shadow: 0 6px 20px rgba(26,86,176,0.25); }
+.form-note { font-size: 0.75rem; color: var(--ink-mute); margin-top: 10px; text-align: center; }
+</style>
+</head>
+<body>
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">AL</a>
+    <div class="nav-links">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="experience.html" class="nav-link">Experience</a>
+      <a href="expertise.html" class="nav-link">Expertise</a>
+      <a href="artifacts.html" class="nav-link">Artifacts</a>
+      <a href="contact.html" class="nav-link active nav-cta">Contact</a>
+    </div>
+    <button class="nav-burger" id="navBurger"><span></span><span></span><span></span></button>
+  </div>
+  <div class="nav-mobile" id="navMobile">
+    <a href="index.html" class="nav-link">Home</a>
+    <a href="experience.html" class="nav-link">Experience</a>
+    <a href="expertise.html" class="nav-link">Expertise</a>
+    <a href="artifacts.html" class="nav-link">Artifacts</a>
+    <a href="contact.html" class="nav-link active">Contact</a>
+  </div>
+</nav>
+
+<div class="page-hero">
+  <div class="container">
+    <div class="page-hero-inner">
+      <div class="section-label">Get In Touch</div>
+      <h1>Let's Work<br/>Together.</h1>
+      <p>Whether you're looking for a Sr. Business Analyst, an Information Systems specialist, or a Project Manager to lead your next initiative — I'd love to connect.</p>
+    </div>
+  </div>
+</div>
+
+<section class="section" style="background: var(--cream);">
+  <div class="container">
+    <div class="contact-layout">
+      <div>
+        <div class="section-label">Direct Contact</div>
+        <h2 class="section-title" style="margin-bottom: 32px;">Reach Out<br/>Directly.</h2>
+
+        <div class="contact-info">
+          <a href="mailto:asadlodhii@gmail.com" class="contact-card">
+            <div class="contact-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 7l-10 7L2 7"/></svg>
+            </div>
+            <div>
+              <div class="contact-label">Email</div>
+              <div class="contact-value">asadlodhii@gmail.com</div>
+            </div>
+          </a>
+          <a href="tel:4084807077" class="contact-card">
+            <div class="contact-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            </div>
+            <div>
+              <div class="contact-label">Phone</div>
+              <div class="contact-value">(408) 480-7077</div>
+            </div>
+          </a>
+          <div class="contact-card">
+            <div class="contact-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <div>
+              <div class="contact-label">Location</div>
+              <div class="contact-value">Fremont, California</div>
+            </div>
+          </div>
+          <a href="https://linkedin.com" target="_blank" class="contact-card">
+            <div class="contact-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+            </div>
+            <div>
+              <div class="contact-label">LinkedIn</div>
+              <div class="contact-value">linkedin.com/in/asadlodhi</div>
+            </div>
+          </a>
+        </div>
+
+        <div class="availability-box" style="margin-top: 24px;">
+          <p><span class="avail-dot"></span><strong>Currently open to new opportunities.</strong> Actively considering Sr. BA, IS BA, and IT PM roles in the Bay Area and remote. Available for initial conversations within 1–2 business days.</p>
+        </div>
+      </div>
+
+      <div class="form-box reveal">
+        <h3>Send a Message</h3>
+        <p class="form-sub">Prefer to reach out via form? I'll respond within 1–2 business days.</p>
+        <form onsubmit="handleSubmit(event)">
+          <div class="form-row">
+            <div class="form-group">
+              <label>First Name</label>
+              <input type="text" placeholder="Jane" required/>
+            </div>
+            <div class="form-group">
+              <label>Last Name</label>
+              <input type="text" placeholder="Smith" required/>
+            </div>
+          </div>
+          <div class="form-group">
+            <label>Email</label>
+            <input type="email" placeholder="jane@company.com" required/>
+          </div>
+          <div class="form-group">
+            <label>Subject / Opportunity Type</label>
+            <select>
+              <option>Sr. Business Analyst Opportunity</option>
+              <option>IT Project Manager Role</option>
+              <option>IS Business Analyst Opportunity</option>
+              <option>Consulting / Contract Work</option>
+              <option>General Inquiry</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Message</label>
+            <textarea placeholder="Tell me about the opportunity or what you'd like to discuss..."></textarea>
+          </div>
+          <button type="submit" class="form-submit" id="submitBtn">Send Message →</button>
+          <p class="form-note" id="formNote">Your message goes directly to asadlodhii@gmail.com</p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand"><div class="footer-logo">AL</div><div class="footer-tagline">Business Systems Analyst<br/>& Project Manager</div></div>
+      <div class="footer-nav"><a href="index.html">Home</a><a href="experience.html">Experience</a><a href="expertise.html">Expertise</a><a href="artifacts.html">Artifacts</a><a href="contact.html">Contact</a></div>
+      <div class="footer-contact"><a href="mailto:asadlodhii@gmail.com">asadlodhii@gmail.com</a><a href="tel:4084807077">(408) 480-7077</a><span>Fremont, CA</span></div>
+    </div>
+    <div class="footer-bottom">© 2025 Asad Lodhi. All rights reserved.</div>
+  </div>
+</footer>
+<script src="js/main.js"></script>
+<script>
+function handleSubmit(e) {
+  e.preventDefault();
+  const btn = document.getElementById('submitBtn');
+  const note = document.getElementById('formNote');
+  btn.textContent = '✓ Message Sent!';
+  btn.style.background = '#1A7A4D';
+  note.textContent = 'Thank you — Asad will respond within 1–2 business days.';
+  note.style.color = '#1A7A4D';
+  setTimeout(() => {
+    btn.textContent = 'Send Message →';
+    btn.style.background = '';
+    note.textContent = 'Your message goes directly to asadlodhii@gmail.com';
+    note.style.color = '';
+  }, 4000);
+}
+</script>
+</body>
+</html>
