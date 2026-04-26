@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Asad Lodhi — Business Analyst & IT Project Manager</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink:        #0f1117;
+    --paper:      #f3f4fb;
+    --surface:    #ffffff;
+    --rule:       #e2e1f0;
+    --muted:      #6b6a8e;
+    --light-text: #9896b8;
+    --indigo:     #4338ca;
+    --indigo-mid: #6366f1;
+    --indigo-lt:  #818cf8;
+    --lav:        #a5b4fc;
+    --lav-bg:     #ede9fe;
+    --lav-soft:   #f5f3ff;
+    --teal:       #0d9488;
+    --teal-bg:    #ccfbf1;
+    --violet:     #7c3aed;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'DM Sans', sans-serif; background: var(--paper); color: var(--ink); line-height: 1.65; overflow-x: hidden; }
+
+  /* subtle paper grain */
+  body::before {
+    content: '';
+    position: fixed; inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+    pointer-events: none; z-index: 9999; opacity: 0.4;
+  }
+
+  /* ── HEADER ── */
+  header {
+    background: var(--ink);
+    color: #fff;
+    padding: 90px 40px 70px;
+    position: relative;
+    overflow: hidden;
+  }
+  header::after {
+    content: 'BA · PM';
+    position: absolute; right: -10px; bottom: -40px;
+    font-family: 'Playfair Display', serif; font-size: 170px; font-weight: 900;
+    color: rgba(255,255,255,0.025); line-height: 1; pointer-events: none; white-space: nowrap;
+  }
+  header::before {
+    content: '';
+    position: absolute; top: -100px; right: -100px;
+    width: 500px; height: 500px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(99,102,241,0.18) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .header-inner { max-width: 1140px; margin: auto; display: grid; grid-template-columns: 1fr auto; align-items: end; gap: 20px; }
+  .eyebrow { font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--lav); margin-bottom: 14px; font-weight: 600; }
+  header h1 { font-family: 'Playfair Display', serif; font-size: clamp(38px, 6vw, 68px); font-weight: 900; line-height: 1.08; letter-spacing: -0.02em; }
+  header h1 em { font-style: italic; color: var(--lav); }
+  .header-sub { margin-top: 16px; font-size: 14px; color: #9ca3af; max-width: 520px; line-height: 1.75; }
+  .header-roles { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 20px; }
+  .h-role { font-size: 11px; font-weight: 600; letter-spacing: 0.07em; text-transform: uppercase; padding: 5px 14px; border-radius: 100px; border: 1px solid rgba(165,180,252,0.35); color: var(--lav); }
+  .h-role.active { background: var(--indigo); color: #fff; border-color: var(--indigo); }
+  .header-meta { text-align: right; display: flex; flex-direction: column; gap: 10px; align-items: flex-end; }
+  .hdr-btn { display: inline-flex; align-items: center; gap: 8px; padding: 10px 18px; border: 1px solid rgba(255,255,255,0.18); color: #fff; text-decoration: none; font-size: 12px; letter-spacing: 0.05em; border-radius: 6px; transition: all 0.2s; font-family: 'DM Sans', sans-serif; font-weight: 500; }
+  .hdr-btn:hover { border-color: var(--lav); color: var(--lav); }
+  .hdr-btn svg { width: 14px; height: 14px; fill: currentColor; }
+
+  /* ── STICKY NAV ── */
+  nav { background: var(--surface); border-bottom: 1px solid var(--rule); position: sticky; top: 0; z-index: 200; }
+  .nav-inner { max-width: 1140px; margin: auto; display: flex; overflow-x: auto; scrollbar-width: none; }
+  .nav-inner::-webkit-scrollbar { display: none; }
+  .nav-inner a { padding: 14px 20px; text-decoration: none; font-size: 11.5px; letter-spacing: 0.09em; text-transform: uppercase; color: var(--muted); white-space: nowrap; transition: color 0.2s; border-bottom: 2px solid transparent; font-weight: 600; }
+  .nav-inner a:hover { color: var(--indigo); border-bottom-color: var(--indigo-mid); }
+  .nav-hire { margin-left: auto; padding: 14px 24px; background: var(--indigo); color: #fff !important; border-bottom: 2px solid transparent !important; font-weight: 700 !important; transition: background 0.2s !important; }
+  .nav-hire:hover { background: var(--violet) !important; color: #fff !important; border-bottom-color: transparent !important; }
+
+  /* ── LAYOUT ── */
+  .container { max-width: 1140px; margin: auto; padding: 56px 20px 90px; }
+
+  .section-label { display: flex; align-items: center; gap: 14px; margin-bottom: 28px; }
+  .section-label .num { font-family: 'Playfair Display', serif; font-size: 13px; color: var(--indigo-mid); font-weight: 700; }
+  .section-label h2 { font-family: 'Playfair Display', serif; font-size: 23px; font-weight: 700; letter-spacing: -0.01em; }
+  .section-label::after { content: ''; flex: 1; height: 1px; background: var(--rule); }
+
+  /* ── SUMMARY ── */
+  .summary-grid { display: grid; grid-template-columns: 2fr 1fr; gap: 20px; }
+  .card { background: var(--surface); border: 1px solid var(--rule); border-radius: 12px; padding: 28px; }
+  .card p { font-size: 14px; color: #374151; line-height: 1.8; }
+  .card p + p { margin-top: 12px; }
+  .card p strong { color: var(--ink); font-weight: 600; }
+
+  .dual-track { display: flex; flex-direction: column; gap: 12px; }
+  .track { border-radius: 12px; padding: 20px; border: 1px solid; }
+  .track-ba { background: var(--lav-soft); border-color: #c4b5fd; }
+  .track-pm { background: #f0fdfa; border-color: #99f6e4; }
+  .track-label { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 6px; }
+  .track-ba .track-label { color: var(--indigo); }
+  .track-pm .track-label { color: var(--teal); }
+  .track-title { font-family: 'Playfair Display', serif; font-size: 15px; font-weight: 700; color: var(--ink); margin-bottom: 6px; }
+  .track-desc { font-size: 12.5px; color: var(--muted); line-height: 1.55; }
+
+  /* ── IMPACT STATS ── */
+  .impact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 14px; }
+  .stat-card { background: var(--ink); color: #fff; border-radius: 12px; padding: 30px 24px; position: relative; overflow: hidden; transition: transform 0.2s; }
+  .stat-card:hover { transform: translateY(-3px); }
+  .stat-card::after { content: ''; position: absolute; bottom: -10px; right: -10px; width: 90px; height: 90px; background: radial-gradient(circle, rgba(99,102,241,0.25), transparent 70%); border-radius: 50%; }
+  .stat-value { font-family: 'Playfair Display', serif; font-size: 44px; font-weight: 900; color: var(--lav); line-height: 1; letter-spacing: -0.02em; }
+  .stat-label { margin-top: 8px; font-size: 11px; letter-spacing: 0.09em; text-transform: uppercase; color: #9ca3af; font-weight: 600; }
+  .stat-note { margin-top: 6px; font-size: 11px; color: #6b7280; line-height: 1.4; }
+
+  /* ── INDUSTRIES ── */
+  .industry-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(148px, 1fr)); gap: 12px; }
+  .industry-card { background: var(--surface); border: 1px solid var(--rule); border-radius: 12px; padding: 20px 16px; text-align: center; transition: all 0.2s; cursor: default; }
+  .industry-card:hover { border-color: var(--indigo-mid); box-shadow: 0 4px 16px rgba(99,102,241,0.12); transform: translateY(-2px); }
+  .industry-icon { font-size: 26px; margin-bottom: 10px; display: block; }
+  .industry-name { font-size: 12px; font-weight: 600; color: var(--ink); line-height: 1.4; }
+
+  /* ── TIMELINE ── */
+  .timeline { position: relative; padding-left: 0; }
+  .timeline-line { position: absolute; left: 132px; top: 0; bottom: 0; width: 2px; background: linear-gradient(to bottom, var(--indigo), var(--lav), var(--rule)); }
+  .timeline-item { display: grid; grid-template-columns: 122px 32px 1fr; gap: 0 18px; margin-bottom: 12px; align-items: start; }
+  .timeline-date { text-align: right; padding-top: 20px; font-size: 11px; color: var(--muted); letter-spacing: 0.04em; font-weight: 500; line-height: 1.5; }
+  .timeline-dot-col { display: flex; flex-direction: column; align-items: center; padding-top: 22px; }
+  .timeline-dot { width: 14px; height: 14px; border-radius: 50%; background: var(--indigo-mid); border: 3px solid var(--paper); box-shadow: 0 0 0 2px var(--indigo-mid); flex-shrink: 0; z-index: 1; }
+  .timeline-card { background: var(--surface); border: 1px solid var(--rule); border-radius: 12px; padding: 20px 22px; margin-bottom: 4px; transition: border-color 0.2s, box-shadow 0.2s; }
+  .timeline-card:hover { border-color: var(--indigo-mid); box-shadow: 0 4px 16px rgba(99,102,241,0.1); }
+  .timeline-role { font-family: 'Playfair Display', serif; font-size: 16px; font-weight: 700; letter-spacing: -0.01em; margin-bottom: 3px; }
+  .timeline-company { font-size: 13px; color: var(--indigo-mid); font-weight: 600; margin-bottom: 2px; }
+  .timeline-client { font-size: 11.5px; color: var(--muted); margin-bottom: 10px; }
+  .timeline-meta { display: flex; flex-wrap: wrap; gap: 7px; margin-bottom: 8px; }
+  .tl-badge { font-size: 10px; letter-spacing: 0.07em; text-transform: uppercase; background: var(--lav-bg); color: var(--indigo); padding: 3px 9px; border-radius: 100px; font-weight: 700; border: 1px solid var(--lav); }
+  .tl-badge-teal { background: var(--teal-bg); color: var(--teal); border-color: #5eead4; }
+  .timeline-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
+  .tl-tech { font-size: 10px; background: var(--paper); color: var(--muted); padding: 2px 8px; border-radius: 4px; font-weight: 500; border: 1px solid var(--rule); }
+  .tl-bullets { list-style: none; margin-top: 10px; display: flex; flex-direction: column; gap: 5px; }
+  .tl-bullets li { font-size: 13px; color: #4b5563; line-height: 1.6; padding-left: 14px; position: relative; }
+  .tl-bullets li::before { content: '▸'; position: absolute; left: 0; color: var(--indigo-lt); font-size: 10px; top: 3px; }
+  .tl-bullets li strong { color: var(--ink); font-weight: 600; }
+
+  /* ── SKILLS ── */
+  .skills-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 14px; }
+  .skill-panel { background: var(--surface); border: 1px solid var(--rule); border-radius: 12px; padding: 22px; transition: border-color 0.2s; }
+  .skill-panel:hover { border-color: var(--indigo-mid); }
+  .sp-head { display: flex; align-items: center; gap: 10px; margin-bottom: 14px; }
+  .sp-icon { width: 32px; height: 32px; border-radius: 8px; background: var(--lav-bg); border: 1px solid var(--lav); display: flex; align-items: center; justify-content: center; font-size: 14px; }
+  .sp-title { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.09em; color: var(--ink); }
+  .chips { display: flex; flex-wrap: wrap; gap: 6px; }
+  .chip { font-size: 11.5px; font-weight: 500; color: var(--muted); background: var(--paper); border: 1px solid var(--rule); padding: 4px 10px; border-radius: 6px; transition: all 0.18s; }
+  .chip:hover { background: var(--lav-bg); color: var(--indigo); border-color: var(--lav); }
+
+  /* ── DOCUMENT VAULT ── */
+  .vault-intro { font-size: 14px; color: #4b5563; max-width: 620px; margin-bottom: 28px; line-height: 1.8; }
+  .artifact-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(310px, 1fr)); gap: 16px; }
+  .artifact-card { background: var(--surface); border: 1px solid var(--rule); border-radius: 14px; padding: 24px; display: flex; flex-direction: column; transition: transform 0.22s, box-shadow 0.22s, border-color 0.22s; position: relative; overflow: hidden; }
+  .artifact-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, var(--indigo), var(--lav)); opacity: 0; transition: opacity 0.22s; }
+  .artifact-card:hover { transform: translateY(-4px); box-shadow: 0 12px 36px rgba(99,102,241,0.1); border-color: var(--indigo-mid); }
+  .artifact-card:hover::before { opacity: 1; }
+  .artifact-card.empty-card { border-style: dashed; border-color: var(--rule); }
+  .artifact-card.empty-card:hover { border-color: var(--indigo-mid); border-style: dashed; }
+  .artifact-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 14px; }
+  .artifact-icon { width: 42px; height: 42px; background: var(--lav-bg); border: 1px solid var(--lav); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 18px; flex-shrink: 0; }
+  .artifact-card.empty-card .artifact-icon { background: var(--paper); border-color: var(--rule); opacity: 0.65; }
+  .artifact-tag { font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; background: var(--ink); color: var(--paper); padding: 3px 9px; border-radius: 4px; font-weight: 600; }
+  .artifact-title { font-family: 'Playfair Display', serif; font-size: 17px; font-weight: 700; margin-bottom: 8px; letter-spacing: -0.01em; }
+  .artifact-desc { font-size: 13px; color: #4b5563; line-height: 1.65; flex: 1; }
+  .artifact-reflection { margin-top: 12px; padding-top: 12px; border-top: 1px dashed var(--rule); font-size: 11.5px; color: var(--muted); font-style: italic; line-height: 1.5; }
+  .artifact-footer { margin-top: 18px; display: flex; justify-content: flex-end; align-items: center; gap: 10px; }
+  .dl-btn { display: inline-flex; align-items: center; gap: 7px; padding: 9px 16px; background: var(--indigo); color: #fff; text-decoration: none; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; border-radius: 6px; font-weight: 600; transition: background 0.2s; font-family: 'DM Sans', sans-serif; }
+  .dl-btn:hover { background: var(--violet); }
+  .dl-btn svg { width: 12px; height: 12px; fill: currentColor; }
+  .coming-badge { font-size: 10px; font-weight: 700; color: var(--muted); background: var(--paper); border: 1px solid var(--rule); padding: 5px 12px; border-radius: 100px; letter-spacing: 0.07em; text-transform: uppercase; }
+
+  /* ── CREDENTIALS ── */
+  .creds-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 16px; }
+  .cert-card { background: var(--surface); border: 1px solid var(--rule); border-radius: 11px; padding: 14px 16px; display: flex; align-items: center; gap: 12px; transition: all 0.2s; }
+  .cert-card:hover { border-color: var(--indigo-mid); transform: translateY(-2px); box-shadow: 0 5px 16px rgba(99,102,241,0.08); }
+  .cert-ico { width: 34px; height: 34px; border-radius: 9px; background: var(--lav-bg); border: 1px solid var(--lav); display: flex; align-items: center; justify-content: center; font-size: 14px; flex-shrink: 0; }
+  .cert-name { font-size: 12.5px; font-weight: 600; color: var(--ink); line-height: 1.3; }
+  .cert-issuer { font-size: 11px; color: var(--muted); }
+  .edu-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .edu-card { background: linear-gradient(135deg, var(--lav-soft) 0%, var(--surface) 100%); border: 1px solid var(--rule); border-radius: 12px; padding: 20px; display: flex; gap: 14px; }
+  .edu-ico { font-size: 1.4rem; flex-shrink: 0; }
+  .edu-deg { font-size: 13px; font-weight: 700; color: var(--ink); line-height: 1.3; }
+  .edu-school { font-size: 12px; color: var(--indigo-mid); margin-top: 3px; }
+
+  /* ── CONTACT ── */
+  .contact-wrap { background: var(--ink); border-radius: 20px; padding: 4rem; display: grid; grid-template-columns: 1.3fr 1fr; gap: 4rem; align-items: center; position: relative; overflow: hidden; }
+  .contact-wrap::before { content: ''; position: absolute; top: -100px; right: -100px; width: 400px; height: 400px; border-radius: 50%; background: radial-gradient(circle, rgba(99,102,241,0.2) 0%, transparent 70%); pointer-events: none; }
+  .contact-head { font-family: 'Playfair Display', serif; font-size: 2.2rem; font-weight: 900; line-height: 1.15; margin-bottom: 14px; color: #fff; }
+  .contact-head em { font-style: italic; color: var(--lav); }
+  .contact-sub { font-size: 13.5px; color: #9ca3af; line-height: 1.8; margin-bottom: 28px; max-width: 420px; }
+  .contact-cta { display: inline-flex; align-items: center; gap: 8px; background: var(--indigo); color: #fff; padding: 12px 24px; border-radius: 8px; font-size: 13px; font-weight: 700; text-decoration: none; transition: background 0.2s; letter-spacing: 0.03em; }
+  .contact-cta:hover { background: var(--violet); }
+  .contact-links { display: flex; flex-direction: column; gap: 10px; }
+  .clink { display: flex; align-items: center; gap: 14px; background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.12); border-radius: 10px; padding: 14px 18px; text-decoration: none; color: #fff; font-size: 13px; transition: all 0.2s; }
+  .clink:hover { background: rgba(255,255,255,0.13); transform: translateX(4px); border-color: var(--lav); }
+  .clink-label { font-size: 10px; font-weight: 700; opacity: 0.5; text-transform: uppercase; letter-spacing: 0.12em; min-width: 56px; }
+
+  /* ── FOOTER ── */
+  footer { background: var(--ink); color: #4b5563; text-align: center; padding: 28px; font-size: 12px; letter-spacing: 0.04em; border-top: 1px solid #1f2333; }
+  footer span { color: var(--lav); }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+  .animate { opacity: 0; animation: fadeUp 0.55s ease forwards; }
+  .delay-1 { animation-delay: 0.1s; } .delay-2 { animation-delay: 0.2s; } .delay-3 { animation-delay: 0.3s; }
+  .reveal { opacity: 0; transform: translateY(20px); transition: opacity 0.6s ease, transform 0.6s ease; }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+  .rd1 { transition-delay: 0.07s; } .rd2 { transition-delay: 0.14s; } .rd3 { transition-delay: 0.21s; }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 860px) {
+    .header-inner { grid-template-columns: 1fr; }
+    .header-meta { text-align: left; align-items: flex-start; }
+    header { padding: 60px 20px 48px; }
+    .summary-grid { grid-template-columns: 1fr; }
+    .creds-grid { grid-template-columns: 1fr 1fr; }
+    .edu-grid, .contact-wrap { grid-template-columns: 1fr; gap: 2rem; }
+    .contact-wrap { padding: 2.5rem; }
+    .timeline-line { display: none; }
+    .timeline-item { grid-template-columns: 1fr; }
+    .timeline-date { text-align: left; padding-top: 0; margin-bottom: 6px; }
+    .timeline-dot-col { display: none; }
+    .artifact-grid { grid-template-columns: 1fr; }
+    .impact-grid { grid-template-columns: 1fr 1fr; }
+    .industry-grid { grid-template-columns: repeat(3, 1fr); }
+  }
+  @media (max-width: 560px) {
+    .creds-grid { grid-template-columns: 1fr; }
+    .impact-grid { grid-template-columns: 1fr 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ── HEADER ── -->
+<header>
+  <div class="header-inner">
+    <div class="animate">
+      <div class="eyebrow">Portfolio · Business Analyst & IT Project Manager</div>
+      <h1>Asad<br><em>Lodhi</em></h1>
+      <p class="header-sub">12+ years delivering measurable outcomes across enterprise systems, SAP/ERP transformations, process optimization, and Agile program governance — in consulting, manufacturing, and regulated life sciences.</p>
+      <div class="header-roles">
+        <span class="h-role active">Business Analyst (IS)</span>
+        <span class="h-role active">IT Project Manager</span>
+        <span class="h-role">Systems Analyst</span>
+        <span class="h-role">SAP · ERP Specialist</span>
+        <span class="h-role">Program Manager</span>
+      </div>
+    </div>
+    <div class="header-meta animate delay-2">
+      <a class="hdr-btn" href="mailto:asadlodhii@gmail.com">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+        asadlodhii@gmail.com
+      </a>
+      <a class="hdr-btn" href="https://linkedin.com/in/asadlodhi" target="_blank">
+        <svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        LinkedIn Profile
+      </a>
+      <a class="hdr-btn" href="tel:4084807077">
+        <svg viewBox="0 0 24 24"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.01-.24c1.12.37 2.33.57 3.58.57a1 1 0 011 1V20a1 1 0 01-1 1C9.4 21 3 14.6 3 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.46.57 3.58a1 1 0 01-.25 1.01l-2.2 2.2z"/></svg>
+        (408) 480-7077
+      </a>
+    </div>
+  </div>
+</header>
+
+<!-- ── STICKY NAV ── -->
+<nav>
+  <div class="nav-inner">
+    <a href="#summary">Summary</a>
+    <a href="#impact">Impact</a>
+    <a href="#industries">Industries</a>
+    <a href="#timeline">Experience</a>
+    <a href="#competencies">Skills</a>
+    <a href="#artifacts">Portfolio Docs</a>
+    <a href="#credentials">Credentials</a>
+    <a href="#contact" class="nav-hire">Hire Me →</a>
+  </div>
+</nav>
+
+<!-- ── MAIN CONTENT ── -->
+<div class="container">
+
+  <!-- 01 SUMMARY -->
+  <section id="summary" style="margin-bottom: 56px;">
+    <div class="section-label reveal"><span class="num">01</span><h2>Professional Summary</h2></div>
+    <div class="summary-grid reveal">
+      <div class="card">
+        <p>Senior Business Analyst and IT Project Manager with over <strong>12 years of experience</strong> translating complex business needs into scalable, technology-driven solutions. My background spans <strong>enterprise system integration, SAP S/4HANA & ERP transformations, manufacturing execution systems (MES), PLM, process optimization,</strong> and Agile program delivery — with a proven track record across management consulting, regulated manufacturing, and life sciences.</p>
+        <p>I bridge the gap between business strategy and technical execution — whether leading SAP/Oracle integrations for manufacturing operations, building KPI dashboards for SoCalGas, driving ISO 13485-compliant system validation, or governing cross-functional delivery programs. I deliver outcomes, not just documentation.</p>
+      </div>
+      <div class="dual-track">
+        <div class="track track-ba">
+          <div class="track-label">Track A · BA (IS)</div>
+          <div class="track-title">Business Systems Analyst</div>
+          <div class="track-desc">Requirements engineering, SAP/ERP/MES optimization, gap analysis, UML/SysML modeling, ISO 13485 compliance, financial systems, and traceability in regulated environments.</div>
+        </div>
+        <div class="track track-pm">
+          <div class="track-label">Track B · IT Project Manager</div>
+          <div class="track-title">Project & Program Manager</div>
+          <div class="track-desc">Full SDLC governance, Agile/Scrum/ITIL delivery, KPI dashboards, stakeholder alignment, budgeting, resource planning, and cross-functional program coordination.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 02 IMPACT -->
+  <section id="impact" style="margin-bottom: 56px;">
+    <div class="section-label reveal"><span class="num">02</span><h2>Impact by the Numbers</h2></div>
+    <div class="impact-grid reveal">
+      <div class="stat-card">
+        <div class="stat-value">45%</div>
+        <div class="stat-label">Manual Processing Cut</div>
+        <div class="stat-note">API-based workflow automation at E2/SoCalGas</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value">95%</div>
+        <div class="stat-label">On-Time Delivery</div>
+        <div class="stat-note">Across 10+ mission-critical systems at TCS</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value">40%</div>
+        <div class="stat-label">Faster Analytics</div>
+        <div class="stat-note">Spark/Kafka ETL architecture at Hitachi Chemicals</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value">100%</div>
+        <div class="stat-label">Compliance Record</div>
+        <div class="stat-note">ISO 13485 / IQ·OQ·PQ across all validated systems</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-value">12+</div>
+        <div class="stat-label">Years Experience</div>
+        <div class="stat-note">Consulting, life sciences & regulated manufacturing</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 03 INDUSTRIES -->
+  <section id="industries" style="margin-bottom: 56px;">
+    <div class="section-label reveal"><span class="num">03</span><h2>Industries Served</h2></div>
+    <div class="industry-grid reveal">
+      <div class="industry-card"><span class="industry-icon">🏭</span><div class="industry-name">Manufacturing & Chemicals</div></div>
+      <div class="industry-card"><span class="industry-icon">🧬</span><div class="industry-name">Life Sciences & Medical Devices</div></div>
+      <div class="industry-card"><span class="industry-icon">⚡</span><div class="industry-name">Utilities & Energy</div></div>
+      <div class="industry-card"><span class="industry-icon">🖥️</span><div class="industry-name">Enterprise Technology & Consulting</div></div>
+      <div class="industry-card"><span class="industry-icon">💊</span><div class="industry-name">Biotech & Biosciences</div></div>
+      <div class="industry-card"><span class="industry-icon">📊</span><div class="industry-name">Financial Systems & Reporting</div></div>
+      <div class="industry-card"><span class="industry-icon">🏗️</span><div class="industry-name">SAP ERP Environments</div></div>
+    </div>
+  </section>
+
+  <!-- 04 EXPERIENCE TIMELINE -->
+  <section id="timeline" style="margin-bottom: 56px;">
+    <div class="section-label reveal"><span class="num">04</span><h2>Career Timeline</h2></div>
+    <div class="timeline reveal">
+      <div class="timeline-line"></div>
+
+      <!-- E2 / SoCalGas -->
+      <div class="timeline-item">
+        <div class="timeline-date">Feb 2024<br>Present</div>
+        <div class="timeline-dot-col"><div class="timeline-dot"></div></div>
+        <div class="timeline-card">
+          <div class="timeline-role">Sr. Business Analyst / Project Manager</div>
+          <div class="timeline-company">E2 Consulting Engineers</div>
+          <div class="timeline-client">Client: SoCalGas · Fremont, CA</div>
+          <div class="timeline-meta">
+            <span class="tl-badge">BA (IS)</span>
+            <span class="tl-badge">Project Manager</span>
+            <span class="tl-badge">Consulting</span>
+            <span class="tl-badge tl-badge-teal">Current</span>
+          </div>
+          <ul class="tl-bullets">
+            <li>Developed financial tracking solutions and computerized systems supporting <strong>budgeting, forecasting, and financial reporting</strong> for accurate resource allocation.</li>
+            <li>Implemented API-based integration tools reducing <strong>manual processing by 45%</strong> and achieving 10% overall operational efficiency gains.</li>
+            <li>Built <strong>KPI dashboards and executive reporting</strong> for tracking project performance, compliance, and operational trends.</li>
+            <li>Facilitated cross-functional workshops, stakeholder meetings, and <strong>end-user training</strong> on new systems and processes.</li>
+            <li>Performed gap analysis, monitored project progress, and managed <strong>stakeholder communications</strong> throughout the full lifecycle.</li>
+          </ul>
+          <div class="timeline-tags">
+            <span class="tl-tech">API Integration</span><span class="tl-tech">KPI Dashboards</span><span class="tl-tech">Financial Forecasting</span><span class="tl-tech">Gap Analysis</span><span class="tl-tech">Change Management</span><span class="tl-tech">JIRA</span><span class="tl-tech">Confluence</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- TCS -->
+      <div class="timeline-item">
+        <div class="timeline-date">Nov 2019<br>Jan 2024</div>
+        <div class="timeline-dot-col"><div class="timeline-dot"></div></div>
+        <div class="timeline-card">
+          <div class="timeline-role">Sr. Business Analyst / Project Manager</div>
+          <div class="timeline-company">TCS Private Limited</div>
+          <div class="timeline-client">Enterprise Technology · Multi-region</div>
+          <div class="timeline-meta">
+            <span class="tl-badge">SAP S/4HANA</span>
+            <span class="tl-badge">PLM · MES</span>
+            <span class="tl-badge">Agile PM</span>
+            <span class="tl-badge">ISO 13485</span>
+          </div>
+          <ul class="tl-bullets">
+            <li>Led SAP and Oracle system integrations for manufacturing operations — identified and implemented process optimizations increasing efficiency by <strong>20%</strong>.</li>
+            <li>Supported <strong>PLM and MES system</strong> implementation ensuring ISO 13485 compliance; standardized manufacturing processes across multiple regions.</li>
+            <li>Managed full SDLC using Agile/Scrum with CI/CD pipelines — <strong>95% of projects</strong> delivered on time and on budget.</li>
+            <li>Designed ITIL-based governance framework reducing project delays by <strong>30%</strong>; architected Python/Jenkins automation saving 5 hrs/week.</li>
+            <li>Developed UML/SysML traceability matrices and reporting systems for <strong>10+ high-priority information systems.</strong></li>
+          </ul>
+          <div class="timeline-tags">
+            <span class="tl-tech">SAP S/4HANA</span><span class="tl-tech">Oracle</span><span class="tl-tech">PLM</span><span class="tl-tech">MES</span><span class="tl-tech">ISO 13485</span><span class="tl-tech">UML / SysML</span><span class="tl-tech">Python</span><span class="tl-tech">Jenkins</span><span class="tl-tech">CI/CD</span><span class="tl-tech">ITIL</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hitachi -->
+      <div class="timeline-item">
+        <div class="timeline-date">Sep 2016<br>Nov 2019</div>
+        <div class="timeline-dot-col"><div class="timeline-dot"></div></div>
+        <div class="timeline-card">
+          <div class="timeline-role">Business Analyst / Systems Engineer</div>
+          <div class="timeline-company">Hitachi Chemicals</div>
+          <div class="timeline-client">Manufacturing · Chemicals</div>
+          <div class="timeline-meta">
+            <span class="tl-badge">SAP ERP</span>
+            <span class="tl-badge">MES</span>
+            <span class="tl-badge">V&amp;V</span>
+            <span class="tl-badge">ETL</span>
+          </div>
+          <ul class="tl-bullets">
+            <li>Led SAP ERP integration and process optimization — reduced development time by <strong>20%</strong> and improved MES operational efficiency.</li>
+            <li>Designed scalable ETL architecture with Apache Spark & Kafka — achieved <strong>40% faster analytics</strong> via event-driven microservices.</li>
+            <li>Developed and executed FAT, unit, and SIT test plans — improved test coverage by <strong>30%</strong> and reduced cross-functional testing issues by 25%.</li>
+            <li>Managed QMS updates and ISO 13485 change order processes; implemented IQ/OQ/PQ validation maintaining <strong>100% compliance</strong> while cutting cycle time by 35%.</li>
+          </ul>
+          <div class="timeline-tags">
+            <span class="tl-tech">SAP ERP</span><span class="tl-tech">Apache Spark</span><span class="tl-tech">Kafka</span><span class="tl-tech">ETL</span><span class="tl-tech">IQ/OQ/PQ</span><span class="tl-tech">ISO 13485</span><span class="tl-tech">PDWare</span><span class="tl-tech">FAT / SIT</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- BD Biosciences -->
+      <div class="timeline-item">
+        <div class="timeline-date">Jun 2012<br>Aug 2016</div>
+        <div class="timeline-dot-col"><div class="timeline-dot"></div></div>
+        <div class="timeline-card">
+          <div class="timeline-role">Business Analyst / Systems Engineer</div>
+          <div class="timeline-company">BD Biosciences</div>
+          <div class="timeline-client">Life Sciences · Medical Devices</div>
+          <div class="timeline-meta">
+            <span class="tl-badge">SAP ERP</span>
+            <span class="tl-badge">Agile Scrum</span>
+            <span class="tl-badge">Medical Devices</span>
+          </div>
+          <ul class="tl-bullets">
+            <li>Managed requirements gathering, fit/gap analysis, and change management for <strong>SAP ERP and MES</strong> integrations in medical device manufacturing.</li>
+            <li>Led Agile SCRUM governance — increased team velocity by <strong>20%</strong> and reduced sprint backlog items; improved manufacturing efficiency by 15%.</li>
+            <li>Conducted requirements analysis, system integration testing, and defect analysis — reduced development time by <strong>20%</strong> by catching issues early.</li>
+            <li>Managed risk assessment and mitigation ensuring project milestones were met <strong>within budget and on schedule.</strong></li>
+          </ul>
+          <div class="timeline-tags">
+            <span class="tl-tech">SAP ERP</span><span class="tl-tech">MES</span><span class="tl-tech">Agile / Scrum</span><span class="tl-tech">Risk Management</span><span class="tl-tech">IBM DOORS</span><span class="tl-tech">HP ALM</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 05 SKILLS -->
+  <section id="competencies" style="margin-bottom: 56px;">
+    <div class="section-label reveal"><span class="num">05</span><h2>Skills & Technology</h2></div>
+    <div class="skills-grid reveal">
+      <div class="skill-panel">
+        <div class="sp-head"><div class="sp-icon">🏗️</div><span class="sp-title">ERP, MES & PLM Systems</span></div>
+        <div class="chips">
+          <span class="chip">SAP S/4HANA</span><span class="chip">SAP ERP</span><span class="chip">MES</span><span class="chip">PLM</span>
+          <span class="chip">Oracle</span><span class="chip">Salesforce</span><span class="chip">Workday</span>
+          <span class="chip">NetSuite</span><span class="chip">PeopleSoft</span><span class="chip">MS Dynamics</span><span class="chip">Infor</span>
+        </div>
+      </div>
+      <div class="skill-panel">
+        <div class="sp-head"><div class="sp-icon">📋</div><span class="sp-title">Project & Program Management</span></div>
+        <div class="chips">
+          <span class="chip">JIRA</span><span class="chip">Confluence</span><span class="chip">MS Project</span>
+          <span class="chip">PDWare</span><span class="chip">Asana</span><span class="chip">Trello</span>
+          <span class="chip">TargetProcess</span><span class="chip">Tuleap</span><span class="chip">Basecamp</span><span class="chip">Zendesk</span>
+        </div>
+      </div>
+      <div class="skill-panel">
+        <div class="sp-head"><div class="sp-icon">📄</div><span class="sp-title">Requirements & Test Management</span></div>
+        <div class="chips">
+          <span class="chip">IBM DOORS</span><span class="chip">Jama Connect</span><span class="chip">HP ALM</span>
+          <span class="chip">ReQtest</span><span class="chip">Caliber</span><span class="chip">Blueprint</span>
+          <span class="chip">UML</span><span class="chip">SysML</span><span class="chip">Rhapsody</span>
+        </div>
+      </div>
+      <div class="skill-panel">
+        <div class="sp-head"><div class="sp-icon">⚡</div><span class="sp-title">Data, Integration & Automation</span></div>
+        <div class="chips">
+          <span class="chip">Apache Spark</span><span class="chip">Kafka</span><span class="chip">ETL Pipelines</span>
+          <span class="chip">RESTful APIs</span><span class="chip">Python</span><span class="chip">Jenkins</span>
+          <span class="chip">CI/CD</span><span class="chip">AWS Cloud</span><span class="chip">Power BI</span>
+        </div>
+      </div>
+      <div class="skill-panel">
+        <div class="sp-head"><div class="sp-icon">✏️</div><span class="sp-title">Design & Visualization</span></div>
+        <div class="chips">
+          <span class="chip">Figma</span><span class="chip">Balsamiq</span><span class="chip">InVision</span>
+          <span class="chip">Sketch</span><span class="chip">Adobe CS</span><span class="chip">Canva</span>
+          <span class="chip">KPI Dashboards</span>
+        </div>
+      </div>
+      <div class="skill-panel">
+        <div class="sp-head"><div class="sp-icon">🔄</div><span class="sp-title">Methodologies & Compliance</span></div>
+        <div class="chips">
+          <span class="chip">Agile / Scrum</span><span class="chip">ITIL</span><span class="chip">PMBOK</span>
+          <span class="chip">SDLC</span><span class="chip">IQ/OQ/PQ</span><span class="chip">ISO 13485</span>
+          <span class="chip">V&amp;V</span><span class="chip">Change Management</span><span class="chip">Six Sigma</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 06 PORTFOLIO DOCUMENTS -->
+  <section id="artifacts" style="margin-bottom: 56px;">
+    <div class="section-label reveal"><span class="num">06</span><h2>Portfolio Documents</h2></div>
+    <p class="vault-intro reveal">Sample deliverables from real engagements — anonymized where required. Each document demonstrates a specific dimension of my analytical, technical, or program management capability.</p>
+    <div class="artifact-grid reveal">
+
+      <div class="artifact-card empty-card">
+        <div class="artifact-top">
+          <div class="artifact-icon">📋</div>
+          <span class="artifact-tag">Requirements</span>
+        </div>
+        <div class="artifact-title">Business Requirements Document</div>
+        <div class="artifact-desc">Defines business objectives, stakeholder needs, functional scope, user stories, and acceptance criteria for an enterprise initiative.</div>
+        <div class="artifact-reflection">Shows structured thinking and the ability to bridge business problems with formal, actionable requirements.</div>
+        <div class="artifact-footer">
+          <span class="coming-badge">Uploading Soon</span>
+        </div>
+      </div>
+
+      <div class="artifact-card empty-card">
+        <div class="artifact-top">
+          <div class="artifact-icon">⚙️</div>
+          <span class="artifact-tag">Systems</span>
+        </div>
+        <div class="artifact-title">Software Requirements Specification</div>
+        <div class="artifact-desc">Technical SRS with system context diagrams, functional & non-functional requirements, constraints, and UML/SysML models.</div>
+        <div class="artifact-reflection">Demonstrates cross-functional alignment between business requirements and technical delivery across complex systems.</div>
+        <div class="artifact-footer">
+          <span class="coming-badge">Uploading Soon</span>
+        </div>
+      </div>
+
+      <div class="artifact-card empty-card">
+        <div class="artifact-top">
+          <div class="artifact-icon">⚠️</div>
+          <span class="artifact-tag">Governance</span>
+        </div>
+        <div class="artifact-title">Project Risk Register</div>
+        <div class="artifact-desc">Risk identification, probability/impact matrix, mitigation strategies, owner assignments, and status tracking across delivery streams.</div>
+        <div class="artifact-reflection">Demonstrates proactive governance and execution risk management — a core PM discipline across all my engagements.</div>
+        <div class="artifact-footer">
+          <span class="coming-badge">Uploading Soon</span>
+        </div>
+      </div>
+
+      <div class="artifact-card empty-card">
+        <div class="artifact-top">
+          <div class="artifact-icon">🗺️</div>
+          <span class="artifact-tag">Process</span>
+        </div>
+        <div class="artifact-title">Process Flow — As-Is & To-Be</div>
+        <div class="artifact-desc">Current-state process maps, gap analysis findings, and future-state redesign with quantified improvement recommendations.</div>
+        <div class="artifact-reflection">Shows ability to diagnose operational inefficiencies and translate them into structured, implementable solutions.</div>
+        <div class="artifact-footer">
+          <span class="coming-badge">Uploading Soon</span>
+        </div>
+      </div>
+
+      <div class="artifact-card empty-card">
+        <div class="artifact-top">
+          <div class="artifact-icon">✅</div>
+          <span class="artifact-tag">Quality</span>
+        </div>
+        <div class="artifact-title">Test Plan & Requirements Traceability Matrix</div>
+        <div class="artifact-desc">RTM linking requirements to test cases; formal test strategy covering FAT, SIT, IQ/OQ/PQ scenarios with pass/fail results.</div>
+        <div class="artifact-reflection">Highlights V&V expertise and regulatory compliance capability — critical in my life sciences and manufacturing work.</div>
+        <div class="artifact-footer">
+          <span class="coming-badge">Uploading Soon</span>
+        </div>
+      </div>
+
+      <div class="artifact-card empty-card">
+        <div class="artifact-top">
+          <div class="artifact-icon">📊</div>
+          <span class="artifact-tag">Executive</span>
+        </div>
+        <div class="artifact-title">Project Status Dashboard & KPI Framework</div>
+        <div class="artifact-desc">Executive-level reporting with KPI metrics, milestone tracking, resource utilization, risk/issue summary, and compliance status.</div>
+        <div class="artifact-reflection">Demonstrates data-driven decision-making and executive communication skills across PM and BA roles.</div>
+        <div class="artifact-footer">
+          <span class="coming-badge">Uploading Soon</span>
+        </div>
+      </div>
+
+    </div>
+    <p style="margin-top: 20px; font-size: 13px; color: var(--muted); text-align: center;">
+      📎 Documents will be added as downloadable PDFs. <a href="mailto:asadlodhii@gmail.com" style="color: var(--indigo); text-decoration: none; font-weight: 600;">Request samples directly →</a>
+    </p>
+  </section>
+
+  <!-- 07 CREDENTIALS -->
+  <section id="credentials" style="margin-bottom: 56px;">
+    <div class="section-label reveal"><span class="num">07</span><h2>Credentials</h2></div>
+    <div class="creds-grid reveal">
+      <div class="cert-card"><div class="cert-ico">☁️</div><div><div class="cert-name">AWS Cloud Essentials</div><div class="cert-issuer">Amazon Web Services</div></div></div>
+      <div class="cert-card"><div class="cert-ico">♾️</div><div><div class="cert-name">Agile Project Management</div><div class="cert-issuer">Google</div></div></div>
+      <div class="cert-card"><div class="cert-ico">📊</div><div><div class="cert-name">Fundamentals of Project Management</div><div class="cert-issuer">Google</div></div></div>
+      <div class="cert-card"><div class="cert-ico">🏅</div><div><div class="cert-name">SCRUM Master Certification</div><div class="cert-issuer">Scrum Alliance</div></div></div>
+      <div class="cert-card"><div class="cert-ico">📋</div><div><div class="cert-name">SCRUM Product Owner</div><div class="cert-issuer">Scrum Alliance</div></div></div>
+      <div class="cert-card"><div class="cert-ico">🔄</div><div><div class="cert-name">Scrum Fundamentals</div><div class="cert-issuer">SCRUMstudy</div></div></div>
+    </div>
+    <div class="edu-grid reveal" style="margin-top: 14px;">
+      <div class="edu-card"><div class="edu-ico">🎓</div><div><div class="edu-deg">M.S. Computer Engineering</div><div class="edu-school">California State University, Fullerton</div></div></div>
+      <div class="edu-card"><div class="edu-ico">🎓</div><div><div class="edu-deg">B.E. Electrical Engineering</div><div class="edu-school">Sir Syed University of Engineering & Technology</div></div></div>
+    </div>
+  </section>
+
+  <!-- 08 CONTACT -->
+  <section id="contact" style="border-bottom: none; padding-bottom: 0;">
+    <div class="section-label reveal"><span class="num">08</span><h2>Get in Touch</h2></div>
+    <div class="contact-wrap reveal">
+      <div>
+        <div class="contact-head">Ready to bring <em>clarity</em><br>to your next project</div>
+        <p class="contact-sub">Looking for a Business Analyst or IT Project Manager who delivers measurable outcomes — not just documentation. I'm open to full-time, consulting, and contract roles across BA (IS), systems analysis, SAP transformation, and program management.</p>
+        <a href="mailto:asadlodhii@gmail.com" class="contact-cta">Send a Message →</a>
+      </div>
+      <div class="contact-links">
+        <a href="mailto:asadlodhii@gmail.com" class="clink"><span class="clink-label">Email</span>asadlodhii@gmail.com</a>
+        <a href="tel:4084807077" class="clink"><span class="clink-label">Phone</span>(408) 480-7077</a>
+        <a href="https://linkedin.com/in/asadlodhi" target="_blank" class="clink"><span class="clink-label">LinkedIn</span>linkedin.com/in/asadlodhi</a>
+        <div class="clink" style="cursor:default;"><span class="clink-label">Location</span>Fremont, CA · Open to Remote</div>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<footer>
+  <span>Asad Lodhi</span> · Sr. Business Analyst & IT Project Manager · Portfolio
+</footer>
+
+<script>
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.07 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+</body>
+</html>
