@@ -78,8 +78,7 @@
   .nav-inner::-webkit-scrollbar { display: none; }
   .nav-inner a { padding: 14px 20px; text-decoration: none; font-size: 11.5px; letter-spacing: 0.09em; text-transform: uppercase; color: var(--muted); white-space: nowrap; transition: color 0.2s; border-bottom: 2px solid transparent; font-weight: 600; }
   .nav-inner a:hover { color: var(--indigo); border-bottom-color: var(--indigo-mid); }
-  .nav-hire { margin-left: auto; padding: 14px 24px; background: var(--indigo); color: #fff !important; border-bottom: 2px solid transparent !important; font-weight: 700 !important; transition: background 0.2s !important; }
-  .nav-hire:hover { background: var(--violet) !important; color: #fff !important; border-bottom-color: transparent !important; }
+
 
   /* ── LAYOUT ── */
   .container { max-width: 1140px; margin: auto; padding: 56px 20px 90px; }
@@ -90,21 +89,13 @@
   .section-label::after { content: ''; flex: 1; height: 1px; background: var(--rule); }
 
   /* ── SUMMARY ── */
-  .summary-grid { display: grid; grid-template-columns: 2fr 1fr; gap: 20px; }
+  .summary-grid { display: grid; grid-template-columns: 1fr; gap: 20px; }
   .card { background: var(--surface); border: 1px solid var(--rule); border-radius: 12px; padding: 28px; }
   .card p { font-size: 14px; color: #374151; line-height: 1.8; }
   .card p + p { margin-top: 12px; }
   .card p strong { color: var(--ink); font-weight: 600; }
 
-  .dual-track { display: flex; flex-direction: column; gap: 12px; }
-  .track { border-radius: 12px; padding: 20px; border: 1px solid; }
-  .track-ba { background: var(--lav-soft); border-color: #c4b5fd; }
-  .track-pm { background: #f0fdfa; border-color: #99f6e4; }
-  .track-label { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 6px; }
-  .track-ba .track-label { color: var(--indigo); }
-  .track-pm .track-label { color: var(--teal); }
-  .track-title { font-family: 'Playfair Display', serif; font-size: 15px; font-weight: 700; color: var(--ink); margin-bottom: 6px; }
-  .track-desc { font-size: 12.5px; color: var(--muted); line-height: 1.55; }
+
 
   /* ── IMPACT STATS ── */
   .impact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 14px; }
@@ -282,7 +273,7 @@
     <a href="#competencies">Skills</a>
     <a href="#artifacts">Portfolio Docs</a>
     <a href="#credentials">Credentials</a>
-    <a href="#contact" class="nav-hire">Hire Me →</a>
+
   </div>
 </nav>
 
@@ -296,18 +287,6 @@
       <div class="card">
         <p>Senior Business Analyst and IT Project Manager with over <strong>12 years of experience</strong> translating complex business needs into scalable, technology-driven solutions. My background spans <strong>enterprise system integration, SAP S/4HANA & ERP transformations, manufacturing execution systems (MES), PLM, process optimization,</strong> and Agile program delivery — with a proven track record across management consulting, regulated manufacturing, and life sciences.</p>
         <p>I bridge the gap between business strategy and technical execution — whether leading SAP/Oracle integrations for manufacturing operations, building KPI dashboards for SoCalGas, driving ISO 13485-compliant system validation, or governing cross-functional delivery programs. I deliver outcomes, not just documentation.</p>
-      </div>
-      <div class="dual-track">
-        <div class="track track-ba">
-          <div class="track-label">Track A · BA (IS)</div>
-          <div class="track-title">Business Systems Analyst</div>
-          <div class="track-desc">Requirements engineering, SAP/ERP/MES optimization, gap analysis, UML/SysML modeling, ISO 13485 compliance, financial systems, and traceability in regulated environments.</div>
-        </div>
-        <div class="track track-pm">
-          <div class="track-label">Track B · IT Project Manager</div>
-          <div class="track-title">Project & Program Manager</div>
-          <div class="track-desc">Full SDLC governance, Agile/Scrum/ITIL delivery, KPI dashboards, stakeholder alignment, budgeting, resource planning, and cross-functional program coordination.</div>
-        </div>
       </div>
     </div>
   </section>
