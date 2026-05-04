@@ -155,7 +155,25 @@
   .art-desc { font-size: 12.5px; color: #5A5750; line-height: 1.75; flex: 1; font-weight: 300; }
   .art-reflection { margin-top: 12px; padding-top: 12px; border-top: 1px dashed var(--rule); font-size: 11.5px; color: var(--muted); font-style: italic; line-height: 1.6; }
   .art-footer { margin-top: 16px; }
-  .coming { font-size: 10px; font-weight: 600; color: var(--muted); letter-spacing: 0.06em; text-transform: uppercase; }
+
+  /* Download button */
+  .dl-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    background: var(--accent);
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 5px;
+    font-size: 11px;
+    font-weight: 600;
+    text-decoration: none;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    transition: background 0.2s, transform 0.15s;
+  }
+  .dl-btn:hover { background: #2E4339; transform: translateY(-1px); }
+  .dl-btn svg { width: 11px; height: 11px; fill: currentColor; flex-shrink: 0; }
 
   /* CREDENTIALS */
   .creds-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 14px; }
@@ -389,17 +407,135 @@
     <div class="sh reveal"><span class="sh-num">06</span><h2 class="sh-title">Portfolio Documents</h2></div>
     <p class="vault-intro reveal">Sample deliverables from real engagements — anonymized where required. Each document demonstrates a specific dimension of my analytical, technical, or program management capability.</p>
     <div class="artifact-grid reveal">
-      <div class="artifact-card"><div class="art-top"><div class="art-icon">📋</div><span class="art-tag">Requirements</span></div><div class="art-title">Business Requirements Document</div><div class="art-desc">Defines business objectives, stakeholder needs, functional scope, user stories, and acceptance criteria for an enterprise initiative.</div><div class="art-reflection">Shows structured thinking and the ability to bridge business problems with formal, actionable requirements.</div><div class="art-footer"><span class="coming">Uploading Soon</span></div></div>
-      <div class="artifact-card"><div class="art-top"><div class="art-icon">🖥️</div><span class="art-tag">Systems</span></div><div class="art-title">System Requirements Document</div><div class="art-desc">System-level SRD covering functional & non-functional requirements, context diagrams, constraints, interfaces, and UML/SysML models.</div><div class="art-reflection">Demonstrates cross-functional alignment between business requirements and technical delivery.</div><div class="art-footer"><span class="coming">Uploading Soon</span></div></div>
-      <div class="artifact-card"><div class="art-top"><div class="art-icon">🛡️</div><span class="art-tag">Governance</span></div><div class="art-title">Project Risk Register</div><div class="art-desc">Risk identification, probability/impact matrix, mitigation strategies, owner assignments, and status tracking across delivery streams.</div><div class="art-reflection">Demonstrates proactive governance and execution risk management.</div><div class="art-footer"><span class="coming">Uploading Soon</span></div></div>
-      <div class="artifact-card"><div class="art-top"><div class="art-icon">🗺️</div><span class="art-tag">Process</span></div><div class="art-title">Process Flow — As-Is & To-Be</div><div class="art-desc">Current-state process maps, gap analysis findings, and future-state redesign with quantified improvement recommendations.</div><div class="art-reflection">Shows ability to diagnose operational inefficiencies and translate them into structured solutions.</div><div class="art-footer"><span class="coming">Uploading Soon</span></div></div>
-      <div class="artifact-card"><div class="art-top"><div class="art-icon">🧪</div><span class="art-tag">Quality</span></div><div class="art-title">Test Plan</div><div class="art-desc">Formal test strategy covering scope, approach, entry/exit criteria, test types (FAT, SIT, UAT, IQ/OQ/PQ), environments, and results.</div><div class="art-reflection">Highlights V&V expertise in life sciences and regulated manufacturing.</div><div class="art-footer"><span class="coming">Uploading Soon</span></div></div>
-      <div class="artifact-card"><div class="art-top"><div class="art-icon">🔗</div><span class="art-tag">Traceability</span></div><div class="art-title">Requirements Traceability Matrix</div><div class="art-desc">RTM linking every business and system requirement to test cases, design components, and acceptance criteria throughout the SDLC.</div><div class="art-reflection">Essential for ISO 13485 and regulated system delivery.</div><div class="art-footer"><span class="coming">Uploading Soon</span></div></div>
-      <div class="artifact-card"><div class="art-top"><div class="art-icon">📊</div><span class="art-tag">Executive</span></div><div class="art-title">Project Status Dashboard</div><div class="art-desc">Executive-level dashboard with milestone tracking, resource utilization, RAG status, risk/issue summaries, and compliance indicators.</div><div class="art-reflection">Demonstrates data-driven communication for C-suite and senior stakeholder audiences.</div><div class="art-footer"><span class="coming">Uploading Soon</span></div></div>
-      <div class="artifact-card"><div class="art-top"><div class="art-icon">🗂️</div><span class="art-tag">Product</span></div><div class="art-title">Product Requirements Document</div><div class="art-desc">Captures product vision, user personas, epics, user stories, acceptance criteria, and MVP scope from a Product Owner perspective.</div><div class="art-reflection">Demonstrates product ownership — translating stakeholder needs into a delivery-ready backlog.</div><div class="art-footer"><span class="coming">Uploading Soon</span></div></div>
-      <div class="artifact-card"><div class="art-top"><div class="art-icon">🚚</div><span class="art-tag">Migration</span></div><div class="art-title">Migration Document</div><div class="art-desc">Data and system migration plan covering source-to-target mapping, transformation rules, cutover strategy, rollback procedures, and validation checkpoints.</div><div class="art-reflection">Key deliverable in ERP and platform migrations — managing complex transitions with minimal disruption.</div><div class="art-footer"><span class="coming">Uploading Soon</span></div></div>
+
+      <!-- BRD -->
+      <div class="artifact-card">
+        <div class="art-top"><div class="art-icon">📋</div><span class="art-tag">Requirements</span></div>
+        <div class="art-title">Business Requirements Document</div>
+        <div class="art-desc">Defines business objectives, stakeholder needs, functional scope, user stories, and acceptance criteria for an enterprise initiative.</div>
+        <div class="art-reflection">Shows structured thinking and the ability to bridge business problems with formal, actionable requirements.</div>
+        <div class="art-footer">
+          <a href="playbook/documents/BRD.pdf" download class="dl-btn">
+            <svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zm-8 2V5h2v6h1.17L12 13.17 9.83 11H11zm-6 7h14v2H5v-2z"/></svg>
+            Download Document
+          </a>
+        </div>
+      </div>
+
+      <!-- SRS -->
+      <div class="artifact-card">
+        <div class="art-top"><div class="art-icon">🖥️</div><span class="art-tag">Systems</span></div>
+        <div class="art-title">System Requirements Document</div>
+        <div class="art-desc">System-level SRD covering functional & non-functional requirements, context diagrams, constraints, interfaces, and UML/SysML models.</div>
+        <div class="art-reflection">Demonstrates cross-functional alignment between business requirements and technical delivery.</div>
+        <div class="art-footer">
+          <a href="playbook/documents/SRS.pdf" download class="dl-btn">
+            <svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zm-8 2V5h2v6h1.17L12 13.17 9.83 11H11zm-6 7h14v2H5v-2z"/></svg>
+            Download Document
+          </a>
+        </div>
+      </div>
+
+      <!-- Risk Register -->
+      <div class="artifact-card">
+        <div class="art-top"><div class="art-icon">🛡️</div><span class="art-tag">Governance</span></div>
+        <div class="art-title">Project Risk Register</div>
+        <div class="art-desc">Risk identification, probability/impact matrix, mitigation strategies, owner assignments, and status tracking across delivery streams.</div>
+        <div class="art-reflection">Demonstrates proactive governance and execution risk management.</div>
+        <div class="art-footer">
+          <a href="playbook/documents/Project Risk Register.xlsx" download class="dl-btn">
+            <svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zm-8 2V5h2v6h1.17L12 13.17 9.83 11H11zm-6 7h14v2H5v-2z"/></svg>
+            Download Document
+          </a>
+        </div>
+      </div>
+
+      <!-- Process Flow -->
+      <div class="artifact-card">
+        <div class="art-top"><div class="art-icon">🗺️</div><span class="art-tag">Process</span></div>
+        <div class="art-title">Process Flow — As-Is &amp; To-Be</div>
+        <div class="art-desc">Current-state process maps, gap analysis findings, and future-state redesign with quantified improvement recommendations.</div>
+        <div class="art-reflection">Shows ability to diagnose operational inefficiencies and translate them into structured solutions.</div>
+        <div class="art-footer">
+          <a href="playbook/documents/ProcessFlow.pdf" download class="dl-btn">
+            <svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zm-8 2V5h2v6h1.17L12 13.17 9.83 11H11zm-6 7h14v2H5v-2z"/></svg>
+            Download Document
+          </a>
+        </div>
+      </div>
+
+      <!-- Test Report (was Test Plan) -->
+      <div class="artifact-card">
+        <div class="art-top"><div class="art-icon">🧪</div><span class="art-tag">Quality</span></div>
+        <div class="art-title">Test Completion Report</div>
+        <div class="art-desc">Formal test completion report covering scope, approach, entry/exit criteria, test types (FAT, SIT, UAT, IQ/OQ/PQ), environments, and results.</div>
+        <div class="art-reflection">Highlights V&amp;V expertise in life sciences and regulated manufacturing.</div>
+        <div class="art-footer">
+          <a href="playbook/documents/Test Report.docx" download class="dl-btn">
+            <svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zm-8 2V5h2v6h1.17L12 13.17 9.83 11H11zm-6 7h14v2H5v-2z"/></svg>
+            Download Document
+          </a>
+        </div>
+      </div>
+
+      <!-- RTM -->
+      <div class="artifact-card">
+        <div class="art-top"><div class="art-icon">🔗</div><span class="art-tag">Traceability</span></div>
+        <div class="art-title">Requirements Traceability Matrix</div>
+        <div class="art-desc">RTM linking every business and system requirement to test cases, design components, and acceptance criteria throughout the SDLC.</div>
+        <div class="art-reflection">Essential for ISO 13485 and regulated system delivery.</div>
+        <div class="art-footer">
+          <a href="playbook/documents/RTM.zip" download class="dl-btn">
+            <svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zm-8 2V5h2v6h1.17L12 13.17 9.83 11H11zm-6 7h14v2H5v-2z"/></svg>
+            Download Document
+          </a>
+        </div>
+      </div>
+
+      <!-- Status Dashboard -->
+      <div class="artifact-card">
+        <div class="art-top"><div class="art-icon">📊</div><span class="art-tag">Executive</span></div>
+        <div class="art-title">Project Status Dashboard</div>
+        <div class="art-desc">Executive-level dashboard with milestone tracking, resource utilization, RAG status, risk/issue summaries, and compliance indicators.</div>
+        <div class="art-reflection">Demonstrates data-driven communication for C-suite and senior stakeholder audiences.</div>
+        <div class="art-footer">
+          <a href="playbook/documents/StatusDashboard.xlsx" download class="dl-btn">
+            <svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zm-8 2V5h2v6h1.17L12 13.17 9.83 11H11zm-6 7h14v2H5v-2z"/></svg>
+            Download Document
+          </a>
+        </div>
+      </div>
+
+      <!-- PRD -->
+      <div class="artifact-card">
+        <div class="art-top"><div class="art-icon">🗂️</div><span class="art-tag">Product</span></div>
+        <div class="art-title">Product Requirements Document</div>
+        <div class="art-desc">Captures product vision, user personas, epics, user stories, acceptance criteria, and MVP scope from a Product Owner perspective.</div>
+        <div class="art-reflection">Demonstrates product ownership — translating stakeholder needs into a delivery-ready backlog.</div>
+        <div class="art-footer">
+          <a href="playbook/documents/PRD.pdf" download class="dl-btn">
+            <svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zm-8 2V5h2v6h1.17L12 13.17 9.83 11H11zm-6 7h14v2H5v-2z"/></svg>
+            Download Document
+          </a>
+        </div>
+      </div>
+
+      <!-- Migration -->
+      <div class="artifact-card">
+        <div class="art-top"><div class="art-icon">🚚</div><span class="art-tag">Migration</span></div>
+        <div class="art-title">Migration Document</div>
+        <div class="art-desc">Data and system migration plan covering source-to-target mapping, transformation rules, cutover strategy, rollback procedures, and validation checkpoints.</div>
+        <div class="art-reflection">Key deliverable in ERP and platform migrations — managing complex transitions with minimal disruption.</div>
+        <div class="art-footer">
+          <a href="playbook/documents/migration.pdf" download class="dl-btn">
+            <svg viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zm-8 2V5h2v6h1.17L12 13.17 9.83 11H11zm-6 7h14v2H5v-2z"/></svg>
+            Download Document
+          </a>
+        </div>
+      </div>
+
     </div>
-    <p style="margin-top: 22px; font-size: 12.5px; color: var(--muted); text-align: center;">Documents will be added as downloadable PDFs. <a href="mailto:asadlodhii@gmail.com" style="color: var(--accent); text-decoration: none; font-weight: 600;">Request samples directly →</a></p>
+    <p style="margin-top: 22px; font-size: 12.5px; color: var(--muted); text-align: center;">Documents are available for download above. <a href="mailto:asadlodhii@gmail.com" style="color: var(--accent); text-decoration: none; font-weight: 600;">Request additional samples directly →</a></p>
   </section>
 
   <section id="credentials">
