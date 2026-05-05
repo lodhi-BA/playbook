@@ -410,7 +410,7 @@ nav {
 /* ── HOW I WORK ──────────────────────────────────────────────────── */
 .work-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 1px;
   background: var(--border);
   border: 1px solid var(--border);
@@ -434,6 +434,15 @@ nav {
 .w-card:nth-child(1)::before { background: var(--teal); }
 .w-card:nth-child(2)::before { background: var(--gold); }
 .w-card:nth-child(3)::before { background: var(--rose); }
+.w-card:nth-child(4)::before { background: #5A7A9A; }
+
+.w-card:nth-child(1) .w-list li::before { content: '◆'; position: absolute; left: 0; font-size: 5px; top: 5px; color: var(--teal); }
+.w-card:nth-child(2) .w-list li::before { content: '◆'; position: absolute; left: 0; font-size: 5px; top: 5px; color: var(--gold); }
+.w-card:nth-child(3) .w-list li::before { content: '◆'; position: absolute; left: 0; font-size: 5px; top: 5px; color: var(--rose); }
+.w-card:nth-child(4) .w-list li::before { content: '◆'; position: absolute; left: 0; font-size: 5px; top: 5px; color: #5A7A9A; }
+
+@media (max-width: 1100px) { .work-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 580px)  { .work-grid { grid-template-columns: 1fr; } }
 
 .w-num {
   font-family: var(--serif);
@@ -1107,8 +1116,10 @@ footer {
   min-width: 38px;
   text-align: center;
 }
-.fw-ba  { background: rgba(74,120,104,0.12); color: #4A7868; border: 1px solid rgba(74,120,104,0.25); }
-.fw-pm  { background: rgba(154,120,72,0.10); color: #9A7848; border: 1px solid rgba(154,120,72,0.22); }
+.fw-ba  { background: rgba(74,120,104,0.12);  color: #4A7868; border: 1px solid rgba(74,120,104,0.25); }
+.fw-pm  { background: rgba(154,120,72,0.10);  color: #9A7848; border: 1px solid rgba(154,120,72,0.22); }
+.fw-ops { background: rgba(154,84,80,0.10);   color: #8A5050; border: 1px solid rgba(154,84,80,0.22); }
+.fw-gtm { background: rgba(90,122,154,0.10);  color: #5A7A9A; border: 1px solid rgba(90,122,154,0.22); }
 .fw-row-body {
   font-family: var(--sans);
   font-size: 12px;
@@ -1140,6 +1151,155 @@ footer {
 }
 @media (max-width: 1060px) { .fw-grid { grid-template-columns: repeat(2, 1fr); } }
 @media (max-width: 640px)  { .fw-grid { grid-template-columns: 1fr; } }
+
+/* ── HERO PANEL ──────────────────────────────────────────────────── */
+.hero-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  overflow: hidden;
+  background: var(--bg2);
+}
+
+/* Availability */
+.hp-avail {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 18px 26px;
+  border-bottom: 1px solid var(--border);
+  background: rgba(9,21,18,0.55);
+  flex-wrap: wrap;
+}
+.hp-pulse {
+  width: 7px; height: 7px;
+  border-radius: 50%;
+  background: #4A8070;
+  flex-shrink: 0;
+  position: relative;
+}
+.hp-pulse::after {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  border: 1px solid rgba(74,128,112,0.4);
+  animation: pulse-ring 2s ease-out infinite;
+}
+@keyframes pulse-ring {
+  0%   { transform: scale(0.7); opacity: 1; }
+  100% { transform: scale(1.8); opacity: 0; }
+}
+.hp-avail-text {
+  font-family: var(--mono);
+  font-size: 10.5px;
+  font-weight: 400;
+  color: #4A8070;
+  letter-spacing: 0.04em;
+}
+.hp-avail-type {
+  font-family: var(--mono);
+  font-size: 9.5px;
+  font-weight: 300;
+  color: var(--ink3);
+  letter-spacing: 0.04em;
+  margin-left: auto;
+}
+
+/* Stats */
+.hp-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border-bottom: 1px solid var(--border);
+}
+.hp-stat {
+  padding: 28px 18px 22px;
+  border-right: 1px solid var(--border);
+  position: relative;
+  transition: background 0.2s;
+}
+.hp-stat:last-child { border-right: none; }
+.hp-stat:hover { background: var(--bg3); }
+.hp-stat-val {
+  font-family: var(--serif);
+  font-size: 36px;
+  font-weight: 700;
+  font-style: italic;
+  color: #A08050;
+  line-height: 1;
+  margin-bottom: 8px;
+  letter-spacing: -0.02em;
+}
+.hp-stat-sup {
+  font-size: 16px;
+  letter-spacing: 0;
+  vertical-align: super;
+  font-style: normal;
+}
+.hp-stat-label {
+  font-family: var(--sans);
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink3);
+  line-height: 1.4;
+}
+
+/* Domains */
+.hp-domains {
+  padding: 22px 26px;
+  border-bottom: 1px solid var(--border);
+}
+.hp-domain-label {
+  font-family: var(--mono);
+  font-size: 9px;
+  font-weight: 300;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink3);
+  margin-bottom: 12px;
+}
+.hp-domain-row { display: flex; flex-wrap: wrap; gap: 6px; }
+.hp-domain {
+  font-family: var(--mono);
+  font-size: 9.5px;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  padding: 4px 10px;
+  border-radius: 3px;
+}
+.hp-domain.teal { background: rgba(9,21,18,0.8); border: 1px solid rgba(74,128,112,0.3); color: #4A8070; }
+.hp-domain.gold { background: rgba(22,18,8,0.8); border: 1px solid rgba(168,135,90,0.3); color: #9A7848; }
+.hp-domain.rose { background: rgba(22,10,9,0.8); border: 1px solid rgba(154,84,80,0.3); color: #8A5050; }
+
+/* CTA */
+.hp-cta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 26px;
+  text-decoration: none;
+  font-family: var(--mono);
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  color: var(--ink2);
+  transition: all 0.2s;
+  background: var(--bg2);
+}
+.hp-cta:hover {
+  background: var(--bg3);
+  color: var(--gold);
+}
+.hp-cta svg {
+  width: 14px; height: 14px;
+  transition: transform 0.2s;
+  opacity: 0.6;
+}
+.hp-cta:hover svg { transform: translateX(4px); opacity: 1; }
 
 </style>
 </head>
@@ -1200,40 +1360,54 @@ footer {
     </div>
 
     <div class="hero-right ani d2">
-      <div class="pillars">
-        <div class="pillar">
-          <div class="p-num">01 —</div>
-          <div class="p-title">Data Analytics</div>
-          <p class="p-body">Turning raw operational data into decision-ready intelligence. KPI frameworks, ETL pipelines, and executive dashboards that drive action.</p>
-          <div class="p-chips">
-            <span class="pchip">Apache Spark</span>
-            <span class="pchip">Kafka ETL</span>
-            <span class="pchip">Power BI</span>
-            <span class="pchip">KPI Design</span>
+      <div class="hero-panel">
+
+        <!-- Availability badge -->
+        <div class="hp-avail">
+          <span class="hp-pulse"></span>
+          <span class="hp-avail-text">Available for new engagements</span>
+          <span class="hp-avail-type">Full-time · Contract · Consulting</span>
+        </div>
+
+        <!-- Stat grid -->
+        <div class="hp-stats">
+          <div class="hp-stat">
+            <div class="hp-stat-val">12<span class="hp-stat-sup">yr</span></div>
+            <div class="hp-stat-label">Enterprise Experience</div>
+          </div>
+          <div class="hp-stat">
+            <div class="hp-stat-val">40<span class="hp-stat-sup">+</span></div>
+            <div class="hp-stat-label">Projects Delivered</div>
+          </div>
+          <div class="hp-stat">
+            <div class="hp-stat-val">$2<span class="hp-stat-sup">M+</span></div>
+            <div class="hp-stat-label">Cost Savings Driven</div>
+          </div>
+          <div class="hp-stat">
+            <div class="hp-stat-val">8</div>
+            <div class="hp-stat-label">Industries Served</div>
           </div>
         </div>
-        <div class="pillar">
-          <div class="p-num">02 —</div>
-          <div class="p-title">Translate Business Requirements</div>
-          <p class="p-body">Bridging the gap between what stakeholders need and what engineers can build — with zero room for misinterpretation.</p>
-          <div class="p-chips">
-            <span class="pchip">BRD &amp; SRS</span>
-            <span class="pchip">UML &middot; SysML</span>
-            <span class="pchip">Gap Analysis</span>
-            <span class="pchip">RTM</span>
+
+        <!-- Domain tags -->
+        <div class="hp-domains">
+          <div class="hp-domain-label">Where I operate</div>
+          <div class="hp-domain-row">
+            <span class="hp-domain teal">SAP &amp; ERP</span>
+            <span class="hp-domain teal">Life Sciences</span>
+            <span class="hp-domain gold">Data &amp; Analytics</span>
+            <span class="hp-domain gold">Requirements</span>
+            <span class="hp-domain rose">GTM &amp; Change Mgmt</span>
+            <span class="hp-domain rose">Program Mgmt</span>
           </div>
         </div>
-        <div class="pillar">
-          <div class="p-num">03 —</div>
-          <div class="p-title">GTM Strategy</div>
-          <p class="p-body">Aligning product, process, and people for launch. Change management and governance frameworks that ensure adoption, not just delivery.</p>
-          <div class="p-chips">
-            <span class="pchip">Change Management</span>
-            <span class="pchip">Stakeholder Comms</span>
-            <span class="pchip">Agile Delivery</span>
-            <span class="pchip">UAT</span>
-          </div>
-        </div>
+
+        <!-- CTA -->
+        <a href="#contact" class="hp-cta">
+          <span>Let's talk about your project</span>
+          <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
+        </a>
+
       </div>
     </div>
   </div>
@@ -1278,38 +1452,51 @@ footer {
       <div class="w-card">
         <div class="w-num">01</div>
         <span class="w-icon">📊</span>
-        <div class="w-title">Data Analytics</div>
-        <p class="w-body">I build the analytical infrastructure that turns operational noise into strategic signal — from ETL architecture to the executive dashboards that act on it.</p>
+        <div class="w-title">Data Analytics &amp; Modeling</div>
+        <p class="w-body">I build the analytical infrastructure that turns operational noise into strategic signal — from statistical modeling and demand forecasting to the executive dashboards that act on it.</p>
         <ul class="w-list">
+          <li>Statistical modeling to interpret datasets, identify trends, and predict operational demand</li>
+          <li>Predictive analytics for field operations — reducing vehicle trips and hazard exposure</li>
           <li>ETL pipeline design with Apache Spark &amp; Kafka — 40% faster analytics</li>
-          <li>KPI dashboard development for SoCalGas executive reporting</li>
-          <li>Financial tracking and forecasting models for resource allocation</li>
-          <li>API-based integration reducing manual processing by 45%</li>
-          <li>Power BI, Python automation, and CI/CD data workflows</li>
+          <li>Power BI, SAP BW, SAS, and SQL dashboards for management and regulatory audiences</li>
+          <li>Budget tracking, capital authorization, and financial spend analysis via SAP</li>
         </ul>
       </div>
       <div class="w-card">
         <div class="w-num">02</div>
         <span class="w-icon">📋</span>
         <div class="w-title">Translate Business Requirements</div>
-        <p class="w-body">I turn ambiguous business needs into unambiguous engineering specifications — requirements that developers build from, testers validate against, and stakeholders trace to outcomes.</p>
+        <p class="w-body">I turn ambiguous business needs into unambiguous specifications — from field operations and safety constraints to engineering requirements that developers build from and regulators approve.</p>
         <ul class="w-list">
-          <li>BRD, SRS, and PRD authoring for SAP, Oracle, and .NET systems</li>
-          <li>UML/SysML traceability matrices for 10+ information systems</li>
-          <li>Fit/gap analysis for ERP and MES implementations</li>
-          <li>Process flow mapping — As-Is to To-Be with improvement targets</li>
-          <li>ISO 13485 documentation, IQ/OQ/PQ, and V&amp;V frameworks</li>
+          <li>BRD, SRS, and PRD authoring for SAP, Oracle, and regulated utility systems</li>
+          <li>Process documentation and As-Is → To-Be mapping across operations, safety, and customer service</li>
+          <li>Regulatory data preparation — California Gas Report, General Rate Cases, and compliance filings</li>
+          <li>UML/SysML traceability matrices and fit/gap analysis for ERP and MES implementations</li>
+          <li>Data integrity frameworks — cleaning, validation, and governance across enterprise data systems</li>
         </ul>
       </div>
       <div class="w-card">
         <div class="w-num">03</div>
+        <span class="w-icon">⚙️</span>
+        <div class="w-title">Operational Excellence</div>
+        <p class="w-body">I optimize the processes underneath the technology — field operations, inventory, financial oversight, and safety — turning business friction into measurable efficiency gains.</p>
+        <ul class="w-list">
+          <li>Operational analysis reducing field inspection trips and optimizing inventory flows</li>
+          <li>Predictive safety modeling to identify and mitigate hazardous conditions before incidents</li>
+          <li>PO, invoice, and capital Work Order Authorization management via SAP</li>
+          <li>Budget tracking, spend analysis, and financial reporting for operational departments</li>
+          <li>Process improvement across customer service, safety, and new business functions</li>
+        </ul>
+      </div>
+      <div class="w-card">
+        <div class="w-num">04</div>
         <span class="w-icon">🚀</span>
-        <div class="w-title">GTM Strategy</div>
-        <p class="w-body">Delivery without adoption is failure. I build the organizational readiness infrastructure that ensures systems get used — from change impact through training and hypercare.</p>
+        <div class="w-title">GTM &amp; Change Management</div>
+        <p class="w-body">Delivery without adoption is failure. I build the organizational readiness that ensures systems get used — from change impact and training through go-live authorization and hypercare.</p>
         <ul class="w-list">
           <li>ITIL governance framework reducing project delays by 30%</li>
-          <li>Stakeholder communication plans from sponsor to end user</li>
-          <li>Role-based training programs with Super User networks</li>
+          <li>Stakeholder communication plans from C-suite to frontline and regulatory bodies</li>
+          <li>Role-based training programs with Super User networks and adoption tracking</li>
           <li>UAT facilitation, defect triage, and go-live authorization</li>
           <li>95% on-time delivery across 10+ mission-critical systems</li>
         </ul>
@@ -1349,86 +1536,86 @@ footer {
       <h2 class="sh-title">Delivery Framework</h2>
       <div class="sh-rule"></div>
     </div>
-    <p class="fw-intro reveal">A repeatable four-phase model that merges analytical rigor with go-to-market execution. Each phase produces a concrete, measurable output — not just activity.</p>
+    <p class="fw-intro reveal">A repeatable four-phase model spanning analytics, requirements, operations, and go-to-market. Each phase maps to a distinct discipline and produces a concrete, measurable output — not just activity.</p>
     <div class="fw-grid reveal">
 
       <div class="fw-card">
         <div class="fw-phase-label">Phase 01</div>
-        <div class="fw-title">Discovery &amp; Strategic Alignment</div>
-        <div class="fw-sub">Define &amp; Plan</div>
+        <div class="fw-title">Discovery &amp; Data Intelligence</div>
+        <div class="fw-sub">Understand &amp; Model</div>
         <div class="fw-rows">
           <div class="fw-row">
-            <div class="fw-row-label fw-ba">BA</div>
-            <div class="fw-row-body">Translate business needs into data requirements, define KPIs, and identify stakeholders.</div>
+            <div class="fw-row-label fw-ba">Analytics</div>
+            <div class="fw-row-body">Gather and interpret datasets, build statistical models, and identify trends driving demand, cost, or operational risk.</div>
           </div>
           <div class="fw-row">
-            <div class="fw-row-label fw-pm">PM / GTM</div>
-            <div class="fw-row-body">Define the Ideal Customer Profile, validate the business case, and map the buyer journey. Identify the one or two core segments to target initially.</div>
+            <div class="fw-row-label fw-ops">Ops</div>
+            <div class="fw-row-body">Audit current-state processes, surface inefficiencies in field operations, inventory, or safety workflows, and quantify the cost of the status quo.</div>
           </div>
         </div>
         <div class="fw-goal">
-          <span class="fw-goal-label">Goal</span>
-          Clear, measurable objectives connecting analytics to revenue.
+          <span class="fw-goal-label">Output</span>
+          A validated baseline — data models, KPI definitions, and a prioritized gap inventory ready to inform requirements.
         </div>
       </div>
 
       <div class="fw-card">
         <div class="fw-phase-label">Phase 02</div>
-        <div class="fw-title">Data Engineering &amp; Insight Generation</div>
-        <div class="fw-sub">Develop &amp; Test</div>
+        <div class="fw-title">Requirements &amp; Solution Design</div>
+        <div class="fw-sub">Define &amp; Specify</div>
         <div class="fw-rows">
           <div class="fw-row">
-            <div class="fw-row-label fw-ba">BA</div>
-            <div class="fw-row-body">Perform data exploration, preprocessing, and model building to address the defined objectives.</div>
+            <div class="fw-row-label fw-pm">BA</div>
+            <div class="fw-row-body">Translate business and analytical findings into BRDs, SRS, process flows, and UML/SysML models. Define acceptance criteria and regulatory data requirements.</div>
           </div>
           <div class="fw-row">
-            <div class="fw-row-label fw-pm">PM / GTM</div>
-            <div class="fw-row-body">Analyze data signals to refine targeting and messaging. Use data-driven insights to determine pricing structure and optimal sales model.</div>
+            <div class="fw-row-label fw-ops">Ops</div>
+            <div class="fw-row-body">Document To-Be process designs, PO and budget structures, and data governance rules that the new solution must enforce.</div>
           </div>
         </div>
         <div class="fw-goal">
-          <span class="fw-goal-label">Goal</span>
-          A verified, actionable insight — a dashboard or predictive model ready for deployment.
+          <span class="fw-goal-label">Output</span>
+          Traceable, stakeholder-approved specifications — BRD, SRS, RTM, and process maps — with zero room for misinterpretation.
         </div>
       </div>
 
       <div class="fw-card">
         <div class="fw-phase-label">Phase 03</div>
-        <div class="fw-title">Operationalization &amp; Launch</div>
-        <div class="fw-sub">Deploy &amp; Execute</div>
+        <div class="fw-title">Operationalization &amp; Delivery</div>
+        <div class="fw-sub">Build &amp; Validate</div>
         <div class="fw-rows">
           <div class="fw-row">
-            <div class="fw-row-label fw-ba">BA</div>
-            <div class="fw-row-body">Create dashboards and reports, validate against requirements, and present findings to stakeholders.</div>
+            <div class="fw-row-label fw-ba">Analytics</div>
+            <div class="fw-row-body">Deploy dashboards, validate models against live data, and confirm reporting pipelines meet regulatory and executive requirements (Power BI, SAP BW, SAS).</div>
           </div>
           <div class="fw-row">
-            <div class="fw-row-label fw-pm">PM / GTM</div>
-            <div class="fw-row-body">Execute the GTM plan across two or three key channels. Implement sales enablement tools including playbooks and demo scripts.</div>
+            <div class="fw-row-label fw-ops">Ops</div>
+            <div class="fw-row-body">Coordinate UAT, manage capital authorizations and procurement workflows, and verify operational processes against acceptance criteria before go-live.</div>
           </div>
         </div>
         <div class="fw-goal">
-          <span class="fw-goal-label">Goal</span>
-          Successful deployment of the solution and launch of the product or segment strategy.
+          <span class="fw-goal-label">Output</span>
+          A tested, compliant, production-ready solution — validated by stakeholders and cleared for launch.
         </div>
       </div>
 
       <div class="fw-card">
         <div class="fw-phase-label">Phase 04</div>
-        <div class="fw-title">Measurement &amp; Iteration</div>
-        <div class="fw-sub">Operate &amp; Optimize</div>
+        <div class="fw-title">GTM, Adoption &amp; Continuous Improvement</div>
+        <div class="fw-sub">Launch &amp; Optimize</div>
         <div class="fw-rows">
           <div class="fw-row">
-            <div class="fw-row-label fw-ba">BA</div>
-            <div class="fw-row-body">Perform ongoing data monitoring to identify root causes of issues and track performance against defined KPIs.</div>
+            <div class="fw-row-label fw-gtm">GTM</div>
+            <div class="fw-row-body">Execute change management and communication plans, deliver role-based training, and support hypercare — ensuring adoption, not just deployment.</div>
           </div>
           <div class="fw-row">
-            <div class="fw-row-label fw-pm">PM / GTM</div>
-            <div class="fw-row-body">Review CRM data, conversion rates, and ROI metrics on a weekly cadence. Use feedback loops from sales and customers to iterate on messaging and product improvements.</div>
+            <div class="fw-row-label fw-ba">Analytics</div>
+            <div class="fw-row-body">Monitor KPIs and operational metrics post-launch, identify drift or underperformance, and feed findings back into the next discovery cycle.</div>
           </div>
         </div>
         <div class="fw-goal">
-          <span class="fw-goal-label">Goal</span>
-          Continuous improvement cycle with clear accountability at each iteration.
+          <span class="fw-goal-label">Output</span>
+          Sustained adoption and a closed feedback loop — measurable ROI with a clear path to the next improvement cycle.
         </div>
       </div>
 
@@ -1478,15 +1665,16 @@ footer {
           <div class="tl-role">Sr. Business Analyst / Project Manager</div>
           <div class="tl-company">E2 Consulting Engineers</div>
           <div class="tl-client">Client: SoCalGas · Fremont, CA</div>
-          <div class="tl-badges"><span class="badge">BA (IS)</span><span class="badge">Project Manager</span><span class="badge">Consulting</span><span class="badge now">Current</span></div>
+          <div class="tl-badges"><span class="badge">BA (IS)</span><span class="badge">Project Manager</span><span class="badge teal">Operational Excellence</span><span class="badge gold">Data Analytics</span><span class="badge now">Current</span></div>
           <ul class="tl-bullets">
-            <li>Developed financial tracking solutions supporting <strong>budgeting, forecasting, and reporting</strong> for accurate resource allocation.</li>
-            <li>Implemented API-based integration tools reducing <strong>manual processing by 45%</strong> and achieving 10% overall efficiency gains.</li>
-            <li>Built <strong>KPI dashboards and executive reporting</strong> for tracking performance, compliance, and operational trends.</li>
-            <li>Facilitated cross-functional workshops, stakeholder meetings, and <strong>end-user training</strong> on new systems and processes.</li>
-            <li>Performed gap analysis, monitored progress, and managed <strong>stakeholder communications</strong> across the full lifecycle.</li>
+            <li>Applied <strong>statistical modeling and predictive analytics</strong> to interpret gas demand datasets, identify usage trends, and forecast customer behavior — directly informing operational planning.</li>
+            <li>Analyzed field operations data to <strong>reduce vehicle trips for meter inspections</strong>, optimize inventory management, and build safety models predicting hazardous conditions before incidents occur.</li>
+            <li>Developed <strong>Power BI, SAP BW, and SAS dashboards</strong> for executive and regulatory reporting — including data preparation for the California Gas Report and General Rate Cases.</li>
+            <li>Managed <strong>capital Work Order Authorizations, budget tracking, and PO/invoice processing</strong> via SAP, providing comprehensive financial oversight across operational departments.</li>
+            <li>Evaluated and documented business processes across customer service, safety, and new business functions — delivering <strong>process improvements and technology implementations</strong> on time and within compliance.</li>
+            <li>Implemented API-based integration tools reducing <strong>manual processing by 45%</strong>; maintained data accuracy, consistency, and integrity across enterprise data systems.</li>
           </ul>
-          <div class="tl-tags"><span class="tl-tag">API Integration</span><span class="tl-tag">KPI Dashboards</span><span class="tl-tag">Financial Forecasting</span><span class="tl-tag">Gap Analysis</span><span class="tl-tag">Change Management</span><span class="tl-tag">JIRA</span><span class="tl-tag">Confluence</span></div>
+          <div class="tl-tags"><span class="tl-tag">Power BI</span><span class="tl-tag">SAP BW</span><span class="tl-tag">SAS</span><span class="tl-tag">SQL</span><span class="tl-tag">Predictive Modeling</span><span class="tl-tag">Gas Demand Forecasting</span><span class="tl-tag">Regulatory Reporting</span><span class="tl-tag">Capital WOA</span><span class="tl-tag">PO Management</span><span class="tl-tag">KPI Dashboards</span><span class="tl-tag">Process Improvement</span><span class="tl-tag">API Integration</span><span class="tl-tag">JIRA</span><span class="tl-tag">Confluence</span></div>
         </div>
       </div>
 
