@@ -682,13 +682,15 @@ nav {
 /* ── SKILLS ──────────────────────────────────────────────────────── */
 .skills-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 1px;
   background: var(--border);
   border: 1px solid var(--border);
   border-radius: 8px;
   overflow: hidden;
 }
+@media (max-width: 900px) { .skills-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 560px) { .skills-grid { grid-template-columns: 1fr; } }
 .sp {
   background: var(--bg2);
   padding: 26px;
@@ -1314,6 +1316,7 @@ footer {
       <a href="#approach">Approach</a>
       <a href="#framework">Framework</a>
       <a href="#impact">Impact</a>
+      <a href="#industries">Industries</a>
       <a href="#experience">Experience</a>
       <a href="#skills">Skills</a>
       <a href="#portfolio">Portfolio</a>
@@ -1532,7 +1535,7 @@ footer {
 <section id="framework">
   <div class="page">
     <div class="sh reveal">
-      <span class="sh-num">02</span>
+      <span class="sh-num">03</span>
       <h2 class="sh-title">Delivery Framework</h2>
       <div class="sh-rule"></div>
     </div>
@@ -1747,10 +1750,11 @@ footer {
       <div class="sh-rule"></div>
     </div>
     <div class="skills-grid reveal">
-      <div class="sp"><div class="sp-head"><div class="sp-ico">🏗️</div><span class="sp-title">ERP, MES &amp; PLM Systems</span></div><div class="chips"><span class="chip">SAP S/4HANA</span><span class="chip">SAP ERP</span><span class="chip">MES</span><span class="chip">PLM</span><span class="chip">Oracle</span><span class="chip">Salesforce</span><span class="chip">Workday</span><span class="chip">NetSuite</span><span class="chip">PeopleSoft</span><span class="chip">MS Dynamics</span><span class="chip">Infor</span></div></div>
+      <div class="sp"><div class="sp-head"><div class="sp-ico">🏗️</div><span class="sp-title">ERP, MES &amp; PLM Systems</span></div><div class="chips"><span class="chip">SAP S/4HANA</span><span class="chip">SAP ERP</span><span class="chip">SAP BW</span><span class="chip">MES</span><span class="chip">PLM</span><span class="chip">Oracle</span><span class="chip">Salesforce</span><span class="chip">Workday</span><span class="chip">NetSuite</span><span class="chip">PeopleSoft</span><span class="chip">MS Dynamics</span><span class="chip">Infor</span></div></div>
       <div class="sp"><div class="sp-head"><div class="sp-ico">📋</div><span class="sp-title">Project &amp; Program Management</span></div><div class="chips"><span class="chip">JIRA</span><span class="chip">Confluence</span><span class="chip">MS Project</span><span class="chip">PDWare</span><span class="chip">Asana</span><span class="chip">Trello</span><span class="chip">TargetProcess</span><span class="chip">Tuleap</span><span class="chip">Basecamp</span></div></div>
       <div class="sp"><div class="sp-head"><div class="sp-ico">📄</div><span class="sp-title">Requirements &amp; Test Management</span></div><div class="chips"><span class="chip">IBM DOORS</span><span class="chip">Jama Connect</span><span class="chip">HP ALM</span><span class="chip">ReQtest</span><span class="chip">Caliber</span><span class="chip">Blueprint</span><span class="chip">UML</span><span class="chip">SysML</span><span class="chip">Rhapsody</span></div></div>
-      <div class="sp"><div class="sp-head"><div class="sp-ico">⚡</div><span class="sp-title">Data, Integration &amp; Automation</span></div><div class="chips"><span class="chip">Apache Spark</span><span class="chip">Kafka</span><span class="chip">ETL Pipelines</span><span class="chip">RESTful APIs</span><span class="chip">Python</span><span class="chip">Jenkins</span><span class="chip">CI/CD</span><span class="chip">AWS Cloud</span><span class="chip">Power BI</span></div></div>
+      <div class="sp"><div class="sp-head"><div class="sp-ico">⚡</div><span class="sp-title">Data, Analytics &amp; Automation</span></div><div class="chips"><span class="chip">Power BI</span><span class="chip">SAS</span><span class="chip">SQL</span><span class="chip">Python</span><span class="chip">Apache Spark</span><span class="chip">Kafka</span><span class="chip">ETL Pipelines</span><span class="chip">RESTful APIs</span><span class="chip">Jenkins</span><span class="chip">CI/CD</span><span class="chip">AWS Cloud</span></div></div>
+      <div class="sp"><div class="sp-head"><div class="sp-ico">💼</div><span class="sp-title">Financial &amp; Operational Management</span></div><div class="chips"><span class="chip">Budget Management</span><span class="chip">Capital WOA</span><span class="chip">PO Processing</span><span class="chip">Invoice Management</span><span class="chip">Regulatory Reporting</span><span class="chip">Gas Demand Forecasting</span><span class="chip">KPI Design</span><span class="chip">Financial Forecasting</span><span class="chip">Operational Optimization</span></div></div>
       <div class="sp"><div class="sp-head"><div class="sp-ico">🎨</div><span class="sp-title">UI/UX Design &amp; Prototyping</span></div><div class="chips"><span class="chip">Figma</span><span class="chip">Balsamiq</span><span class="chip">InVision</span><span class="chip">Sketch</span><span class="chip">Adobe CS</span><span class="chip">Wireframing</span><span class="chip">Prototyping</span><span class="chip">User Journey Mapping</span></div></div>
       <div class="sp"><div class="sp-head"><div class="sp-ico">🔄</div><span class="sp-title">Methodologies &amp; Compliance</span></div><div class="chips"><span class="chip">Agile / Scrum</span><span class="chip">ITIL</span><span class="chip">PMBOK</span><span class="chip">SDLC</span><span class="chip">IQ/OQ/PQ</span><span class="chip">ISO 13485</span><span class="chip">V&amp;V</span><span class="chip">Change Management</span><span class="chip">Six Sigma</span></div></div>
     </div>
@@ -1781,63 +1785,63 @@ footer {
         <div class="art-title">Business Requirements Document</div>
         <div class="art-desc">Defines business objectives, stakeholder needs, functional scope, user stories, and acceptance criteria for an enterprise initiative.</div>
         <div class="art-reflection">Shows structured thinking and the ability to bridge business problems with formal, actionable requirements.</div>
-        <div class="art-footer"><a href="playbook/documents/BRD.pdf" download class="dl-btn"><svg><use href="#ico-dl"/></svg>Download BRD</a></div>
+        <div class="art-footer"><a href="playbook/documents/BRD.pdf" download target="_blank" class="dl-btn"><svg><use href="#ico-dl"/></svg>Download BRD</a></div>
       </div>
       <div class="art-card">
         <div class="art-top"><div class="art-ico">🖥️</div><span class="art-tag">Systems</span></div>
         <div class="art-title">System Requirements Document</div>
         <div class="art-desc">System-level SRD covering functional &amp; non-functional requirements, context diagrams, constraints, interfaces, and UML/SysML models.</div>
         <div class="art-reflection">Demonstrates cross-functional alignment between business requirements and technical delivery.</div>
-        <div class="art-footer"><a href="playbook/documents/SRS.pdf" download class="dl-btn"><svg><use href="#ico-dl"/></svg>Download SRS</a></div>
+        <div class="art-footer"><a href="playbook/documents/SRS.pdf" download target="_blank" class="dl-btn"><svg><use href="#ico-dl"/></svg>Download SRS</a></div>
       </div>
       <div class="art-card">
         <div class="art-top"><div class="art-ico">🛡️</div><span class="art-tag">Governance</span></div>
         <div class="art-title">Project Risk Register</div>
         <div class="art-desc">Risk identification, probability/impact matrix, mitigation strategies, owner assignments, and status tracking across delivery streams.</div>
         <div class="art-reflection">Demonstrates proactive governance and execution risk management.</div>
-        <div class="art-footer"><a href="playbook/documents/Project Risk Register.xlsx" download class="dl-btn"><svg><use href="#ico-dl"/></svg>Download Risk Register</a></div>
+        <div class="art-footer"><a href="playbook/documents/Project Risk Register.xlsx" download target="_blank" class="dl-btn"><svg><use href="#ico-dl"/></svg>Download Risk Register</a></div>
       </div>
       <div class="art-card">
         <div class="art-top"><div class="art-ico">🗺️</div><span class="art-tag">Process</span></div>
         <div class="art-title">Process Flow — As-Is &amp; To-Be</div>
         <div class="art-desc">Current-state process maps, gap analysis findings, and future-state redesign with quantified improvement recommendations.</div>
         <div class="art-reflection">Shows ability to diagnose operational inefficiencies and translate them into structured solutions.</div>
-        <div class="art-footer"><a href="playbook/documents/ProcessFlow.pdf" download class="dl-btn"><svg><use href="#ico-dl"/></svg>Download Process Flow</a></div>
+        <div class="art-footer"><a href="playbook/documents/ProcessFlow.pdf" download target="_blank" class="dl-btn"><svg><use href="#ico-dl"/></svg>Download Process Flow</a></div>
       </div>
       <div class="art-card">
         <div class="art-top"><div class="art-ico">🧪</div><span class="art-tag">Quality</span></div>
         <div class="art-title">Test Completion Report</div>
         <div class="art-desc">Formal test strategy covering scope, approach, entry/exit criteria, test types (FAT, SIT, UAT, IQ/OQ/PQ), environments, and results.</div>
         <div class="art-reflection">Highlights V&amp;V expertise in life sciences and regulated manufacturing.</div>
-        <div class="art-footer"><a href="playbook/documents/Test Report.docx" download class="dl-btn"><svg><use href="#ico-dl"/></svg>Download Test Report</a></div>
+        <div class="art-footer"><a href="playbook/documents/Test Report.docx" download target="_blank" class="dl-btn"><svg><use href="#ico-dl"/></svg>Download Test Report</a></div>
       </div>
       <div class="art-card">
         <div class="art-top"><div class="art-ico">🔗</div><span class="art-tag">Traceability</span></div>
         <div class="art-title">Requirements Traceability Matrix</div>
         <div class="art-desc">RTM linking every business and system requirement to test cases, design components, and acceptance criteria throughout the SDLC.</div>
         <div class="art-reflection">Essential for ISO 13485 and regulated system delivery.</div>
-        <div class="art-footer"><a href="playbook/documents/RTM.zip" download class="dl-btn"><svg><use href="#ico-dl"/></svg>Download RTM</a></div>
+        <div class="art-footer"><a href="playbook/documents/RTM.zip" download target="_blank" class="dl-btn"><svg><use href="#ico-dl"/></svg>Download RTM</a></div>
       </div>
       <div class="art-card">
         <div class="art-top"><div class="art-ico">📊</div><span class="art-tag">Executive</span></div>
         <div class="art-title">Project Status Dashboard</div>
         <div class="art-desc">Executive-level dashboard with milestone tracking, RAG status, risk and issue summaries, and compliance indicators.</div>
         <div class="art-reflection">Demonstrates data-driven communication for C-suite and senior stakeholder audiences.</div>
-        <div class="art-footer"><a href="playbook/documents/StatusDashboard.xlsx" download class="dl-btn"><svg><use href="#ico-dl"/></svg>Download Dashboard</a></div>
+        <div class="art-footer"><a href="playbook/documents/StatusDashboard.xlsx" download target="_blank" class="dl-btn"><svg><use href="#ico-dl"/></svg>Download Dashboard</a></div>
       </div>
       <div class="art-card">
         <div class="art-top"><div class="art-ico">🗂️</div><span class="art-tag">Product</span></div>
         <div class="art-title">Product Requirements Document</div>
         <div class="art-desc">Captures product vision, user personas, epics, user stories, acceptance criteria, and MVP scope from a Product Owner perspective.</div>
         <div class="art-reflection">Demonstrates product ownership — translating stakeholder needs into a delivery-ready backlog.</div>
-        <div class="art-footer"><a href="playbook/documents/PRD.pdf" download class="dl-btn"><svg><use href="#ico-dl"/></svg>Download PRD</a></div>
+        <div class="art-footer"><a href="playbook/documents/PRD.pdf" download target="_blank" class="dl-btn"><svg><use href="#ico-dl"/></svg>Download PRD</a></div>
       </div>
       <div class="art-card">
         <div class="art-top"><div class="art-ico">🚚</div><span class="art-tag">Migration</span></div>
         <div class="art-title">Migration Document</div>
         <div class="art-desc">Data and system migration plan covering source-to-target mapping, transformation rules, cutover strategy, rollback procedures, and validation checkpoints.</div>
         <div class="art-reflection">Key deliverable in ERP and platform migrations — managing complex transitions with minimal disruption.</div>
-        <div class="art-footer"><a href="playbook/documents/migration.pdf" download class="dl-btn"><svg><use href="#ico-dl"/></svg>Download Migration Plan</a></div>
+        <div class="art-footer"><a href="playbook/documents/migration.pdf" download target="_blank" class="dl-btn"><svg><use href="#ico-dl"/></svg>Download Migration Plan</a></div>
       </div>
     </div>
 
